@@ -2,14 +2,25 @@
 set nocompatible
 
 filetype off
-set rtp+=~/.vim/vundle.git/
-call vundle#rc()
 
-Bundle 'Shougo/neocomplcache'
+if has('vim_starting')
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
 
+    call neobundle#rc(expand('~/.bundle'))
+endif
 
-filetype plugin indent on
+NeoBundle 'git://github.com/Shougo/clang_complete.git'
+NeoBundle 'git://github.com/Shougo/echodoc.git'
+NeoBundle 'git://github.com/Shougo/neocomplcache.git'
+NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
+NeoBundle 'git://github.com/Shougo/unite.vim.git'
+NeoBundle 'git://github.com/Shougo/vim-vcs.git'
+NeoBundle 'git://github.com/Shougo/vimfiler.git'
+NeoBundle 'git://github.com/Shougo/vimshell.git'
+NeoBundle 'git://github.com/Shougo/vinarise.git'
 
+filetype plugin on
+filetype indent on
 
 
 " -----------------------------------------------
