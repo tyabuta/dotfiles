@@ -2,13 +2,14 @@
 set nocompatible
 
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 
-"Bundle 'Shougo/neocomplcache'
-"let g:neocomplcache_enable_at_startup=1
+Bundle 'Shougo/neocomplcache'
+
 
 filetype plugin indent on
+
 
 
 " -----------------------------------------------
