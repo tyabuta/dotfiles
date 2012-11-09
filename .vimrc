@@ -8,22 +8,27 @@ if has('vim_starting')
     call neobundle#rc(expand('~/.bundle'))
 endif
 
-NeoBundle 'git://github.com/Shougo/clang_complete.git'
-NeoBundle 'git://github.com/Rip-Rip/clang_complete.git'
-NeoBundle 'git://github.com/Shougo/echodoc.git'
-NeoBundle 'git://github.com/Shougo/neocomplcache.git'
-NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
-NeoBundle 'git://github.com/Shougo/unite.vim.git'
-NeoBundle 'git://github.com/Shougo/vim-vcs.git'
-NeoBundle 'git://github.com/Shougo/vimfiler.git'
-NeoBundle 'git://github.com/Shougo/vimshell.git'
-NeoBundle 'git://github.com/Shougo/vinarise.git'
-NeoBundle 'git://github.com/vim-ruby/vim-ruby.git'
-
+NeoBundle 'Shougo/clang_complete.git'
+"NeoBundle 'Rip-Rip/clang_complete.git'
+NeoBundle 'Shougo/echodoc.git'
+NeoBundle 'Shougo/neocomplcache.git'
+NeoBundle 'Shougo/neobundle.vim.git'
+NeoBundle 'Shougo/unite.vim.git'
+NeoBundle 'Shougo/vim-vcs.git'
+NeoBundle 'Shougo/vimfiler.git'
+NeoBundle 'Shougo/vimshell.git'
+NeoBundle 'Shougo/vinarise.git'
+NeoBundle 'vim-ruby/vim-ruby.git'
+NeoBundle 'plasticboy/vim-markdown.git'
+NeoBundle 'thinca/vim-quickrun.git'
+NeoBundle 'thinca/vim-ref.git'
 
 filetype plugin on
 filetype indent on
 
+" -----------------------------------------------
+" neocomplcache 設定
+" -----------------------------------------------
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplcache.
@@ -97,6 +102,12 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+
+"let g:quickrun_config = {}
+"let g:quickrun_config['markdown'] = {
+"            \ 'outputter': 'browser'
+"            \ }
+
 
 " -----------------------------------------------
 " 文字コードの設定
@@ -236,6 +247,4 @@ augroup MyAutoCmd
     " メイクファイルの場合、タブの展開をしない。
     autocmd FileType make set noexpandtab
 augroup END
-
-
 
