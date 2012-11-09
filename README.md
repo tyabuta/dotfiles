@@ -10,4 +10,5 @@
     $ make
     ```
 2. Install Vim Plugins
+
     vimエディターで、:NeoBundleInstall!
