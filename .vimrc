@@ -8,7 +8,7 @@ if has('vim_starting')
     call neobundle#rc(expand('~/.bundle'))
 endif
 
-NeoBundle 'Shougo/clang_complete.git'
+NeoBundle 'Shougo/neocomplcache-clang.git'
 "NeoBundle 'Rip-Rip/clang_complete.git'
 NeoBundle 'Shougo/echodoc.git'
 NeoBundle 'Shougo/neocomplcache.git'
