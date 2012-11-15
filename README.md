@@ -19,4 +19,4 @@
 
 3. Bash Reboot
     
-    .profileを有効にする為、ログアウトしbash起動し直してください。
+    .profileを有効にする為、ログアウトしbashを起動し直してください。
