@@ -4,11 +4,19 @@
 1. Setup dotfiles:
 
     ```
-    $ cd
     $ git clone https://github.com/tyabuta/dotfiles.git
     $ cd dotfiles
-    $ make
+    $ ./setup.sh
     ```
 2. Install Vim Plugins
 
+    ```
+    $ git submodule init
+    $ git submodule update
+    ```
     vimエディターで、:NeoBundleInstall!
+
+
+3. Bash Reboot
+    
+    .profileを有効にする為、ログアウトしbash起動し直してください。
