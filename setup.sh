@@ -5,7 +5,7 @@ COMMAND="$1"
 case $COMMAND in
     clean)
         rm "$HOME/.profile"
-        rm "$HOME/.tmux_conf"
+        rm "$HOME/.tmux.conf"
         rm "$HOME/.vimrc"
         rm "$HOME/.vim"
         ;;
