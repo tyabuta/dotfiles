@@ -1,14 +1,11 @@
-# ~/.profile: executed by the command interpreter for login shells.
-# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
-# exists.
-# see /usr/share/doc/bash/examples/startup-files for examples.
-# the files are located in the bash-doc package.
-
-# the default umask is set in /etc/profile; for setting the umask
-# for ssh logins, install and configure the libpam-umask package.
-#umask 022
-
-echo "Load: .profile"
+#####################################################################
+# profile 1.1.0.3
+# 
+#                           my ".profile"
+# 
+#                                             (c) 2011-2013 tyabuta.
+#####################################################################
+echo "import .profile"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -18,11 +15,11 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-
 
 
 
@@ -52,12 +49,12 @@ stty stop undef
 #####################################################################
 # X-Window Input Method用の設定
 #####################################################################
-export XMODIFIERS=@im=ibus
-export GTK_IM_MODULE=ibus
-export QT_IM_MODULE=ibus
-ibus-daemon --daemonize --xim
-
-
+if [ `which ibus-daemon` ] ; then
+    export XMODIFIERS=@im=ibus
+    export GTK_IM_MODULE=ibus
+    export QT_IM_MODULE=ibus
+    ibus-daemon --daemonize --xim
+fi
 
 #####################################################################
 # alias設定
