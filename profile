@@ -15,12 +15,15 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+# Include path to Dropbox/bin
+if [ -d "$HOME/Dropbox/bin" ] ; then
+    PATH="$HOME/Dropbox/bin:$PATH"
+fi
 
-# set PATH so it includes user's private bin if it exists
+# Include path to ~/bin
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-
 
 
 
