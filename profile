@@ -94,6 +94,7 @@ proc() {
 #
 alias cls="clear"
 alias la="ls -la"
+alias rmf="rm -Rf"
 
 # tmux のセッションを呼び出す。
 # 軌道していない場合はセッション作成を行う。
@@ -106,8 +107,6 @@ alias clone="git clone --recursive"
 if [ -d "$HOME/homedrive/work" ] ; then
     alias work='cd ~/homedrive/work'
 fi
-
-
 
 
 
