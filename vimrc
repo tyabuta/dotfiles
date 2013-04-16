@@ -142,3 +142,41 @@ augroup MyAutoCmd
     autocmd FileType make set noexpandtab
 augroup END
 
+
+
+" -----------------------------------------------
+" 関数
+" -----------------------------------------------
+
+" 現在開いているvimファイルをsourceコマンドで読み込む
+function! ImportCurrentFile()
+    if "vim" != &l:filetype
+        return
+    endif
+
+    let filename = expand("%:p")
+    echo "import " . filename
+
+    try
+        execute ":source " . filename
+    catch
+        echo "ImportCurrentFile関数は再定義できませんでした。"
+    endtry
+endfunction
+
+nmap ;source :call ImportCurrentFile()<CR>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
