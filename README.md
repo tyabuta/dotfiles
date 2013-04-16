@@ -6,17 +6,17 @@
     ```
     $ git clone https://github.com/tyabuta/dotfiles.git
     $ cd dotfiles
-    $ ./setup.sh
+    $ ./install.sh
     ```
-2. Install Vim Plugins
 
-    ```
-    $ git submodule init
-    $ git submodule update
-    ```
-    vimエディターで、:NeoBundleInstall!
-
-
-3. Bash Reboot
+2. Bash reboot or reload
     
-    .profileを有効にする為、ログアウトしbashを起動し直してください。
+    .profileを有効にする為、ログアウトしbashを起動し直すか、
+    .profileをsource(.)コマンドで読み直してください。
+
+    ```
+    $ . ~/.profile
+    ```
+
+
+
