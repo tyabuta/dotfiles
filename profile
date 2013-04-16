@@ -78,14 +78,30 @@ fi
 
 
 
+#
+# functions
+#
+
+# プロセス
+proc() {
+    ! ps aux | grep $1 && ps aux 
+}
+
+
 
 # 
 # alias設定
 #
 alias cls="clear"
 alias la="ls -la"
-alias proc="ps aux | grep "
+
+# tmux のセッションを呼び出す。
+# 軌道していない場合はセッション作成を行う。
 alias tmux="! tmux a > /dev/null 2>&1 && tmux > /dev/null 2>&1 "
+
+# git submodule init/update を兼ねたクローン
+alias clone="git clone --recursive"
+
 
 if [ -d "$HOME/homedrive/work" ] ; then
     alias work='cd ~/homedrive/work'
