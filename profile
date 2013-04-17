@@ -110,6 +110,8 @@ alias tmux="! tmux a > /dev/null 2>&1 && tmux > /dev/null 2>&1 "
 # git submodule init/update を兼ねたクローン
 alias clone="git clone --recursive"
 
+alias push="git push origin master"
+
 
 
 
