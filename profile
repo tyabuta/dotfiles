@@ -5,11 +5,6 @@
 #####################################################################
 echo "import .profile"
 
-
-#
-# PATH設定
-#
-
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -17,17 +12,6 @@ if [ -n "$BASH_VERSION" ]; then
 	. "$HOME/.bashrc"
     fi
 fi
-
-# Include path to Dropbox/bin
-if [ -d "$HOME/Dropbox/bin" ] ; then
-    PATH="$HOME/Dropbox/bin:$PATH"
-fi
-
-# Include path to ~/bin
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
 
 #
 # 端末間で、コマンド履歴をリアルタイムに同期する。
@@ -61,9 +45,24 @@ if [ `which ibus-daemon` ] ; then
 fi
 
 
-#
+# -----------------------------------------------
+# PATH設定
+# -----------------------------------------------
+
+# ~/Dropbox/bin
+if [ -d "$HOME/Dropbox/bin" ] ; then
+    PATH="$HOME/Dropbox/bin:$PATH"
+fi
+
+# ~/bin
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+
+# -----------------------------------------------
 # OS環境別設定
-#
+# -----------------------------------------------
 UNAME=`uname`
 if [ $UNAME = "Darwin" ]; then
     # Mac用
@@ -78,20 +77,28 @@ fi
 
 
 
-#
+# -----------------------------------------------
 # functions
-#
+# -----------------------------------------------
 
 # プロセス
 proc() {
     ! ps aux | grep $1 && ps aux 
 }
 
+# git commit の省略
+commit(){
+    if [ "" != "$1" ]; then
+        git commit -m "\"$1\""
+    else
+        git commit 
+    fi
+}
 
 
-# 
+# -----------------------------------------------
 # alias設定
-#
+# -----------------------------------------------
 alias cls="clear"
 alias la="ls -la"
 alias rmf="rm -Rf"
@@ -103,10 +110,6 @@ alias tmux="! tmux a > /dev/null 2>&1 && tmux > /dev/null 2>&1 "
 # git submodule init/update を兼ねたクローン
 alias clone="git clone --recursive"
 
-
-if [ -d "$HOME/homedrive/work" ] ; then
-    alias work='cd ~/homedrive/work'
-fi
 
 
 
