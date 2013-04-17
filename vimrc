@@ -145,10 +145,11 @@ augroup END
 
 
 " -----------------------------------------------
-" 関数
+" Functions
 " -----------------------------------------------
 
 " 現在開いているvimファイルをsourceコマンドで読み込む
+command! Source call ImportCurrentFile()
 function! ImportCurrentFile()
     if "vim" != &l:filetype
         return
@@ -156,25 +157,8 @@ function! ImportCurrentFile()
 
     let filename = expand("%:p")
     echo "import " . filename
-
-    try
-        execute ":source " . filename
-    catch
-        echo "ImportCurrentFile関数は再定義できませんでした。"
-    endtry
+    execute ":source " . filename
 endfunction
-
-nmap ;source :call ImportCurrentFile()<CR>
-
-
-
-
-
-
-
-
-
-
 
 
 
