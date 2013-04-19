@@ -160,6 +160,17 @@ function! ImportCurrentFile()
     execute ":source " . filename
 endfunction
 
+" カレントファイルをコマンド実行する。
+nmap     <C-r> :call RunCurrentFile()<CR>
+command! Run    call RunCurrentFile()
+function! RunCurrentFile()
+    echo "run!"
+    execute  ":!./" . expand("%")
+endfunction
+
+" FileEncodeをUTF-8に設定する。
+command! UTF8 set fenc=utf8
+
 
 
 
