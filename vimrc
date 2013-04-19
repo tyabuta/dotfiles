@@ -161,7 +161,7 @@ function! ImportCurrentFile()
 endfunction
 
 " カレントファイルをコマンド実行する。
-nmap     <C-r> :call RunCurrentFile()<CR>
+"nmap     <C-r> :call RunCurrentFile()<CR>
 command! Run    call RunCurrentFile()
 function! RunCurrentFile()
     echo "run!"
