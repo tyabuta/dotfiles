@@ -103,6 +103,9 @@ alias cls="clear"
 alias la="ls -la"
 alias rmf="rm -Rf"
 
+# Dropbox内にあるbinディレクトリのコマンド一覧を出力する。
+alias list="ls ~/Dropbox/bin/"
+
 # tmux のセッションを呼び出す。
 # 軌道していない場合はセッション作成を行う。
 alias tmux="! tmux a > /dev/null 2>&1 && tmux > /dev/null 2>&1 "
