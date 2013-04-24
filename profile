@@ -115,6 +115,8 @@ alias clone="git clone --recursive"
 
 alias push="git push origin master"
 
+# git submoduleの更新を行う。
+alias git-submodules-update="git submodule foreach 'git pull origin master'"
 
 
 
