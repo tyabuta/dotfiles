@@ -107,7 +107,7 @@ alias rmf="rm -Rf"
 alias list="ls ~/Dropbox/bin/"
 
 # tmux のセッションを呼び出す。
-# 軌道していない場合はセッション作成を行う。
+# 起動していない場合はセッション作成を行う。
 alias tmux="! tmux a > /dev/null 2>&1 && tmux > /dev/null 2>&1 "
 
 # git submodule init/update を兼ねたクローン
