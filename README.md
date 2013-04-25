@@ -4,7 +4,7 @@
 1. Setup dotfiles:
 
     ```
-    $ git clone https://github.com/tyabuta/dotfiles.git
+    $ git clone --recursive https://github.com/tyabuta/dotfiles.git
     $ cd dotfiles
     $ ./install.sh
     ```
