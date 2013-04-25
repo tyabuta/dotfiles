@@ -1,6 +1,9 @@
 " vi互換モードを解除
 set nocompatible
 
+" neocomplcache
+set runtimepath+=$HOME/.vim/neocomplcache
+let g:neocomplcache_enable_at_startup = 1
 
 
 " -----------------------------------------------
