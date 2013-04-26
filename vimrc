@@ -38,6 +38,11 @@ syntax on
 " カラースキームを設定する。
 colorscheme ron
 
+" 検索結果のハイライト(設定しない場合はデフォルトでNo)
+set hlsearch
+"set nohlsearch
+
+
 " ステータスライン
 set laststatus =2
 set statusline =%<%f\ #%n%m%r%h%w
@@ -133,6 +138,8 @@ nmap <Space>v :b#<CR>
 
 nmap <Space>e :vs<CR>:e.<CR>
 
+" Esc連打で、ハイライト検索の一時解除
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " -----------------------------------------------
 " オートコマンド
