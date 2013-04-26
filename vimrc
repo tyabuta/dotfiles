@@ -5,6 +5,11 @@ set nocompatible
 set runtimepath+=$HOME/.vim/neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 
+" タブで補完を確定する。
+inoremap <expr><TAB>   pumvisible() ? "<CR>" : "\<TAB>"
+
+
+
 
 " -----------------------------------------------
 " 文字コードの設定
@@ -41,6 +46,10 @@ colorscheme ron
 " 検索結果のハイライト(設定しない場合はデフォルトでNo)
 set hlsearch
 "set nohlsearch
+
+"検索をファイルの先頭へループする
+set wrapscan   
+
 
 
 " ステータスライン
@@ -93,11 +102,14 @@ set mouse=a
 " 保存しなくてもバッファ切り替えが出来る
 set hidden
 
-" スワップファイルを作成しない
-set noswapfile
+" スワップファイル設定
+"set noswapfile                 " スワップファイルを作成しない
+set directory=$HOME/.vim/backup " ディレクトリを指定
 
-" バックアップを作成しない
-set nobackup
+" バックアップファイル設定
+"set nobackup                   " バックアップを作成しない
+set backupdir=$HOME/.vim/backup " ディレクトリを指定する
+
 
 " TOhtmlコマンドで行番号を出力しない
 let html_number_lines=0
