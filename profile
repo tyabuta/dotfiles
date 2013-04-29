@@ -119,6 +119,5 @@ alias push="git push origin master"
 # git submoduleの更新を行う。
 alias git-submodules-update="git submodule foreach 'git pull origin master'"
 
-
-
+alias wgetall="wget --recursive --no-clobber --page-requisites --html-extension --convert-links --no-parent"
 
