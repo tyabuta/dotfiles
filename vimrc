@@ -151,7 +151,7 @@ nmap <Space>v :b#<CR>
 nmap <Space>e :vs<CR>:e.<CR>
 
 " Esc連打で、ハイライト検索の一時解除
-nmap <Esc><Esc> :nohlsearch<CR><Esc>
+nmap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 
 " -----------------------------------------------
 " オートコマンド
