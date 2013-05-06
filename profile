@@ -111,13 +111,22 @@ alias list="ls ~/Dropbox/bin/"
 # 起動していない場合はセッション作成を行う。
 alias tmux="! tmux a > /dev/null 2>&1 && tmux > /dev/null 2>&1 "
 
-# git submodule init/update を兼ねたクローン
-alias clone="git clone --recursive"
+alias wgetall="wget --recursive --no-clobber --page-requisites --html-extension --convert-links --no-parent"
 
-alias push="git push origin master"
+
+# -----------------------------------------------
+# Git関係
+# -----------------------------------------------
+
+# git submodule init/update を兼ねたクローン
+alias git-clone="git clone --recursive"
+
+# masterリポジトリのプッシュ
+alias git-push="git push origin master"
+
+# 全てのブランチを表示
+alias git-branches="git branch -a"
 
 # git submoduleの更新を行う。
 alias git-submodules-update="git submodule foreach 'git pull origin master'"
-
-alias wgetall="wget --recursive --no-clobber --page-requisites --html-extension --convert-links --no-parent"
 
