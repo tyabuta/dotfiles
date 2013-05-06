@@ -130,3 +130,10 @@ alias git-branches="git branch -a"
 # git submoduleの更新を行う。
 alias git-submodules-update="git submodule foreach 'git pull origin master'"
 
+#
+# カレントディレクトリのリポジトリ用にGitWebを立ち上げる。
+# デーモンを停止させる時は、git-instaweb stop とする。
+#
+alias git-instaweb="git  instaweb --http=webrick"
+
+
