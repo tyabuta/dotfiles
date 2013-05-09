@@ -113,6 +113,8 @@ alias tmux="! tmux a > /dev/null 2>&1 && tmux > /dev/null 2>&1 "
 
 alias wgetall="wget --recursive --no-clobber --page-requisites --html-extension --convert-links --no-parent"
 
+# emacs設定
+alias emacs="/usr/local/bin/emacs"
 
 # -----------------------------------------------
 # Git関係
