@@ -32,13 +32,15 @@ backup .profile
 backup .tmux.conf
 backup .vimrc
 backup .vim
+backup .emacs.d
 
 # リンクを張る
-echo "Begin to link files."
+echo "Beginning to make link files."
 link profile
 link tmux.conf
 link vimrc
 link vim
+link emacs.d
 
 exit 0
 
