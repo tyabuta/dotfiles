@@ -183,6 +183,9 @@ command! Run :!./%
 " FileEncodeをUTF-8に設定する。
 command! UTF8 set fenc=utf8
 
+" 登録されているレジスタの一覧を表示する。
+command! RegisterList :reg
+
 " 現在開いているvimファイルをsourceコマンドで読み込む
 command! ImportCurrentFile call ImportCurrentFile()
 function! ImportCurrentFile()
