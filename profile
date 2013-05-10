@@ -49,6 +49,8 @@ fi
 # PATH設定
 # -----------------------------------------------
 
+PATH="/usr/local/bin:$PATH"
+
 # ~/Dropbox/bin
 if [ -d "$HOME/Dropbox/bin" ] ; then
     PATH="$HOME/Dropbox/bin:$PATH"
