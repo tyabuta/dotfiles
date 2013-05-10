@@ -170,8 +170,14 @@ augroup END
 " Functions
 " -----------------------------------------------
 
+" カレントファイルをコマンド実行する。
+command! Run :!./%
+
+" FileEncodeをUTF-8に設定する。
+command! UTF8 set fenc=utf8
+
 " 現在開いているvimファイルをsourceコマンドで読み込む
-command! Source call ImportCurrentFile()
+command! ImportCurrentFile call ImportCurrentFile()
 function! ImportCurrentFile()
     if "vim" != &l:filetype
         return
@@ -182,13 +188,15 @@ function! ImportCurrentFile()
     execute ":source " . filename
 endfunction
 
-" カレントファイルをコマンド実行する。
-command! Run :!./%
-
-" FileEncodeをUTF-8に設定する。
-command! UTF8 set fenc=utf8
-
-
+" シンタックスハイライトを切り替える。(enable/off)
+command! ToggleSyntax call ToggleSyntax()
+function! ToggleSyntax()
+    if exists("g:syntax_on")
+        syntax off
+    else
+        syntax enable
+    endif
+endfunction
 
 
 
