@@ -88,14 +88,6 @@ proc() {
     ! ps aux | grep $1 && ps aux 
 }
 
-# git commit の省略
-commit(){
-    if [ "" != "$1" ]; then
-        git commit -m "\"$1\""
-    else
-        git commit 
-    fi
-}
 
 
 # -----------------------------------------------
@@ -136,5 +128,15 @@ alias git-submodules-update="git submodule foreach 'git pull origin master'"
 # デーモンを停止させる時は、git-instaweb stop とする。
 #
 alias git-instaweb="git  instaweb --http=webrick"
+
+# git commit の省略
+git-commit(){
+    if [ "" != "$1" ]; then
+        git commit -m "\"$1\""
+    else
+        git commit 
+    fi
+}
+
 
 
