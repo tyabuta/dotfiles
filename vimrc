@@ -210,3 +210,40 @@ endfunction
 
 
 
+"
+" コメントによる線を引く。 
+"
+"      line: 行を表す表記
+" begin_str: コメントの始まり
+"      char: ライン形成に使用する文字
+"
+function! CommentOutputLine(line, begin_str, char)
+    let cur_line = line(a:line)
+    " コメントの最大列数
+    let col_max = 70
+
+    let str = a:begin_str
+    let str.= repeat(a:char, col_max - strlen(str))
+
+    call setline(cur_line, str)
+endfunction
+
+"
+" 日付を挿入する。
+"
+function! DateInsert()
+    execute ":normal i" . strftime("%Y.%m.%d", localtime())
+endfunction
+
+"
+" 日付の挿入ショートカットキー
+" <C-c><C-d>
+"
+nnoremap <silent> <C-c><C-d> :call DateInsert()<CR>
+
+" vim スクリプトの読み込み(カレントバッファ)
+nnoremap <silent> <F5> :source %<CR>
+
+
+
+
