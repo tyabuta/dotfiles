@@ -55,7 +55,7 @@ set hlsearch
 "set nohlsearch
 
 "検索をファイルの先頭へループする
-set wrapscan   
+set wrapscan
 
 
 
@@ -130,45 +130,67 @@ set clipboard=unnamed,autoselect
 " キーバインド
 " -----------------------------------------------
 
+" Shiftを押しながら移動キーで、画面スクロール。
+nnoremap <S-j> <C-f>
+nnoremap <S-k> <C-b>
+
 " タブで画面移動
-nmap <Tab> <C-w>p
+nnoremap <Tab> <C-w>p
+
+" vim スクリプトの読み込み(カレントバッファ)
+nnoremap <silent> <F5> :call ImportCurrentBuffer()<CR>
 
 " makeの実行
-nmap <F7> :make<CR>
+nnoremap <F7> :make<CR>
 
 " .vimrcの再読み込み
-nmap <F8> :source ~/.vimrc<CR>
+nnoremap <F8> :source ~/.vimrc<CR>
 
 " .vimrcファイルを開く
-nmap <F9> :e ~/.vimrc<CR>
+nnoremap <F9> :e ~/.vimrc<CR>
 
 " 一行上をコピーして貼り付け
-nmap <C-d> kyyp
+nnoremap <C-d> kyyp
+
+" 0レジスタを貼付ける。(0レジスタにはヤンクされたものだけが入る。)
+nnoremap <C-p> "0p
+
+
+
+" 日付の挿入
+nnoremap <silent> <C-c><C-d> :call DateInsert()<CR>
+
+" 検索結果のハイライトを解除
+nnoremap <silent> <C-c><C-h> :nohlsearch<CR>
+
 
 
 " バッファの切り替え
-nmap <Space>b :ls<CR>:buffer
+nnoremap <Space>b :ls<CR>:buffer
 
 " 次のバッファへ移動
-nmap <Space>n :bn<CR>
+nnoremap <Space>n :bn<CR>
 
 " 前回表示していたバッファに移動
-nmap <Space>v :b#<CR>
+nnoremap <Space>v :b#<CR>
 
-nmap <Space>e :vs<CR>:e.<CR>
+nnoremap <Space>e :vs<CR>:e.<CR>
 
-" Esc連打で、ハイライト検索の一時解除
-nmap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 
 " -----------------------------------------------
 " オートコマンド
 " -----------------------------------------------
 
 augroup MyAutoCmd
+    " グループ内のオートコマンドを一旦消去
     autocmd!
 
     " メイクファイルの場合、タブの展開をしない。
     autocmd FileType make set noexpandtab
+
+    " バッファ保存時に不要な末日の空白を削除する。
+    autocmd BufWrite * call ClearTailSpace()
+
 augroup END
 
 
@@ -186,21 +208,28 @@ command! UTF8 set fenc=utf8
 " 登録されているレジスタの一覧を表示する。
 command! RegisterList :reg
 
-" 現在開いているvimファイルをsourceコマンドで読み込む
-command! ImportCurrentFile call ImportCurrentFile()
-function! ImportCurrentFile()
-    if "vim" != &l:filetype
-        return
-    endif
 
-    let filename = expand("%:p")
-    echo "import " . filename
-    execute ":source " . filename
+
+
+
+" -----------------------------------------------
+" Functions
+" -----------------------------------------------
+
+"
+" カレントバッファをsourceコマンドで読み込む
+"
+function! ImportCurrentBuffer()
+    if "vim" == &l:filetype
+        echo "import " . expand("%:p")
+        source %
+    endif
 endfunction
 
+"
 " シンタックスハイライトを切り替える。(enable/off)
-command! ToggleSyntax call ToggleSyntax()
-function! ToggleSyntax()
+"
+function! SyntaxHighlightToggle()
     if exists("g:syntax_on")
         syntax off
     else
@@ -208,23 +237,22 @@ function! ToggleSyntax()
     endif
 endfunction
 
-
-
 "
-" コメントによる線を引く。 
+" コメントによる線を引く。
 "
 "      line: 行を表す表記
 " begin_str: コメントの始まり
+"   end_str: コメントの終わり
 "      char: ライン形成に使用する文字
 "
-function! CommentOutputLine(line, begin_str, char)
+function! CommentOutputLine(line, begin_str, end_str, char)
     let cur_line = line(a:line)
     " コメントの最大列数
     let col_max = 70
 
     let str = a:begin_str
-    let str.= repeat(a:char, col_max - strlen(str))
-
+    let str.= repeat(a:char, col_max - strlen(a:begin_str . a:end_str))
+    let str.= a:end_str
     call setline(cur_line, str)
 endfunction
 
@@ -236,14 +264,37 @@ function! DateInsert()
 endfunction
 
 "
-" 日付の挿入ショートカットキー
-" <C-c><C-d>
+" カレントバッファの不要な末尾空白を消去する。
 "
-nnoremap <silent> <C-c><C-d> :call DateInsert()<CR>
+function! ClearTailSpace()
+    " マッチしない場合にError表示が出るのでトラップする。
+    try
+        %s/\s\+$//
+    catch
+    endtry
+endfunction
 
-" vim スクリプトの読み込み(カレントバッファ)
-nnoremap <silent> <F5> :source %<CR>
-
-
-
+"
+" カーソル移動についてのヘルプを表示する。
+"
+function! HelpCursorControl()
+    echo "Cursor移動 h,j,k,l"
+    echo "    k ... カーソルを上に移動        k:上"
+    echo "    h ... カーソルを左に移動  h:左"
+    echo "    l ... カーソルを右に移動           l:右"
+    echo "    j ... カーソルを下に移動     j:下"
+    echo "Word移動 w,b,e,ge"
+    echo "    w ... 次の単語の先頭に移動"
+    echo "    b ... 前の単語の先頭に移動"
+    echo "    e ... 次の単語の末尾に移動"
+    echo "   ge ... 前の単語の末尾に移動"
+    echo "行移動 ^,$"
+    echo "    ^ ... 行頭へ移動"
+    echo "    $ ... 行末へ移動"
+    echo "括弧移動 %"
+    echo "    % ... 対応する括弧へ移動"
+    echo "画面移動 C-f,C-b"
+    echo "  C-f ... １画面分進む or S-j (my custom)"
+    echo "  C-b ... １画面分戻る or S-k (my custom)"
+endfunction
 
