@@ -260,11 +260,45 @@ function! CommentOutputLine(line, begin_str, end_str, char)
 endfunction
 
 "
-" 日付を挿入する。
+" 日時を挿入する。
+" 挿入する日時はコマンドラインより選択できる。
 "
 function! DateInsert()
-    execute ":normal i" . strftime("%Y.%m.%d", localtime())
+    " 候補となる日付書式を作成
+    let now = localtime()
+    let formats = [
+        \ strftime("%Y.%m.%d", now),
+        \ strftime("%Y.%m.%d %H:%M", now),
+        \ strftime("%Y/%m/%d", now),
+        \ strftime("%Y/%m/%d %H:%M", now),
+        \ strftime("%H:%M", now),
+        \ strftime("%H時%M分", now),
+        \ strftime("%H時%M分%S秒", now),
+        \ strftime("%Y年%m月%d日 %H時%M分", now),
+        \ strftime("%Y年%m月%d日 %A %H時%M分", now),
+        \ strftime("%Y.%m.%d(%a)", now),
+        \ strftime("%Y/%m/%d(%a)", now),
+        \ strftime("%Y年%m月%d日(%a)", now),
+        \ strftime("%Y年%m月%d日 %A", now)]
+
+    " メッセージ用のリストを作成
+    let msg_list = []
+    call add(msg_list, "挿入する日付書式を選んでください。")
+    let i =1
+    for n in formats
+        call add(msg_list, ((i<10)?' '.i : i) .') '.n)
+        let i += 1
+    endfor
+
+    " コマンドラインで入力を受け付ける。
+    let ret = inputlist(msg_list)
+    if 0<ret && ret<=len(formats)
+        " 選択された日付を挿入
+        execute ":normal i" . formats[ret-1]
+    endif
 endfunction
+
+
 
 "
 " カレントバッファの不要な末尾空白を消去する。
