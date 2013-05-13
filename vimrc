@@ -64,7 +64,7 @@ match ZenkakuSpace /　/
 
 " ステータスライン
 set laststatus =2
-set statusline =%<%f\ #%n%m%r%h%w
+set statusline =%<%f%y\ #%n%m%r%h%w
 set statusline+=%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}
 set statusline+=%=\ (%v,%l)/%L%8P\
 
