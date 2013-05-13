@@ -111,6 +111,9 @@ alias wgetall="wget --recursive --no-clobber --page-requisites --html-extension 
 # Git関係
 # -----------------------------------------------
 
+# ステージングしたワークツリーとのdiffを表示する。
+alias git-diff-cached="git diff --cached"
+
 # git submodule init/update を兼ねたクローン
 alias git-clone="git clone --recursive"
 
