@@ -36,7 +36,7 @@ stty stop undef
 
 #
 # X-Window Input Method用の設定
-# 
+#
 if [ `which ibus-daemon` ] ; then
     export XMODIFIERS=@im=ibus
     export GTK_IM_MODULE=ibus
@@ -85,7 +85,7 @@ fi
 
 # プロセス
 proc() {
-    ! ps aux | grep $1 && ps aux 
+    ! ps aux | grep $1 && ps aux
 }
 
 
@@ -114,9 +114,6 @@ alias wgetall="wget --recursive --no-clobber --page-requisites --html-extension 
 # git submodule init/update を兼ねたクローン
 alias git-clone="git clone --recursive"
 
-# masterリポジトリのプッシュ
-alias git-push="git push origin master"
-
 # 全てのブランチを表示
 alias git-branches="git branch -a"
 
@@ -134,7 +131,7 @@ git-commit(){
     if [ "" != "$1" ]; then
         git commit -m "\"$1\""
     else
-        git commit 
+        git commit
     fi
 }
 
