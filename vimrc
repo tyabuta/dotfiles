@@ -57,6 +57,9 @@ set hlsearch
 "検索をファイルの先頭へループする
 set wrapscan
 
+" 全角スペースに色をつける。
+highlight ZenkakuSpace  guibg=gray ctermbg=gray
+match ZenkakuSpace /　/
 
 
 " ステータスライン
