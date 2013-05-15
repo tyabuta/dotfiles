@@ -98,6 +98,7 @@ alias la="ls -la"
 alias rmf="rm -Rf"
 alias vimsudo="sudo -H vim"
 alias desktop="cd ~/Desktop"
+alias dotfiles="cd ~/dotfiles"
 
 # Dropbox内にあるbinディレクトリのコマンド一覧を出力する。
 alias list="ls ~/Dropbox/bin/"
