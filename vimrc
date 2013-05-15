@@ -166,6 +166,8 @@ nnoremap <silent> <C-c><C-d> :call DateInsert()<CR>
 " 検索結果のハイライトを解除
 nnoremap <silent> <C-c><C-h> :nohlsearch<CR>
 
+" Shift-bでバッファ操作
+nnoremap <silent> <S-b> :call BufferControl()<CR>
 
 
 " バッファの切り替え
@@ -334,4 +336,35 @@ function! HelpCursorControl()
     echo "  C-f ... １画面分進む or S-j (my custom)"
     echo "  C-b ... １画面分戻る or S-k (my custom)"
 endfunction
+
+
+
+
+"
+" バッファ操作をキー操作で行う。
+" 左: 前のバッファへ
+" 右: 次のバッファへ
+" 下: カレントバッファを閉じる
+"
+function! BufferControl()
+    echo "-BufferControl- "
+    buffers
+    echo "< Prev      Next >"
+    echo "      Close"
+    echo "        v  "
+    echo "カーソルキーで操作入力してください。(何もしない場合はReturn) "
+
+    " キー入力
+    let c = getchar()
+    if "\<Left>" == c
+        bprevious
+    elseif "\<Right>" == c
+        bNext
+    elseif "\<Down>" == c
+        bdelete
+    endif
+    " 画面更新
+    redraw
+endfunction
+
 
