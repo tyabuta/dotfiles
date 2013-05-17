@@ -30,6 +30,12 @@ function! autoload#HelpCursorControl()
     echo "  C-b ... １画面分戻る or S-k (my custom)"
 endfunction
 
+"
+" カレントバッファのファイルタイプを取得する。
+"
+function! autoload#FileType()
+    return &l:filetype
+endfunction
 
 "
 " 日時を挿入する。
