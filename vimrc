@@ -143,8 +143,8 @@ nnoremap <Tab> <C-w>p
 " vim スクリプトの読み込み(カレントバッファ)
 nnoremap <silent> <F5> :call ImportCurrentBuffer()<CR>
 
-" makeの実行
-nnoremap <F7> :make<CR>
+" ビルドコマンドまたは、シンタックスチェック。
+nnoremap <F7> :call autoload#Build()<CR>
 
 " .vimrcの再読み込み
 nnoremap <F8> :source ~/.vimrc<CR>

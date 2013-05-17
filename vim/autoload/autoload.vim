@@ -77,8 +77,6 @@ function! autoload#DateInsert()
 endfunction
 
 
-
-
 "
 " バッファ操作をキー操作で行う。
 "   左: 前のバッファへ
@@ -112,4 +110,30 @@ function! autoload#BufferControl()
     " 画面更新
     redraw
 endfunction
+
+
+"
+" PHP用のシンタックスチェック
+"
+function! autoload#PHPSyntaxCheck()
+    execute ":silent !clear"
+    execute ":silent !echo PHP Syntax Check"
+    execute ":!php --syntax-check %"
+endfunction
+
+
+"
+" ビルドコマンド、またはシンタックスチェックを
+" ファイルタイプに応じて行う。
+"
+function! autoload#Build()
+    let filetype = autoload#FileType()
+    if "php" == filetype
+        call autoload#PHPSyntaxCheck()
+    else
+        echo printf("[%s]に適切なビルドコマンドが見つかりません。", filetype)
+    endif
+endfunction
+
+
 
