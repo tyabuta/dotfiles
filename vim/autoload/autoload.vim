@@ -78,38 +78,45 @@ endfunction
 
 
 "
-" バッファ操作をキー操作で行う。
+" バッファ操作をカーソルキーで行う。
 "   左: 前のバッファへ
 "   右: 次のバッファへ
 "   下: カレントバッファを閉じる
-" 数値: 1-9の指定のバッファ番号へ
+" 数値: 1-9の指定のバッファ番号へ(10以上は不可)
 "
 function! autoload#BufferControl()
-    echo "--- Buffer Control --- %:Current #:Alternate a:Active h:Hidden"
+    echo "*** Buffer Control ***"
+    echo "%:Current #:Alternate a:Active h:Hidden +:Changed"
+    echo "--------------------------------------------------"
     buffers
-    echo "< Prev      Next >"
-    echo "      Close"
-    echo "        v  "
-    echo "カーソルキー、または数値を入力してください。(何もしない場合はReturn) "
+    echo "--------------------------------------------------"
+    echo "                       ^"
+    echo "< Previous  Close  Alternate  Next >"
+    echo "              v                      Please key press."
 
     " キー入力
-    let c = getchar()
-    if "\<Left>" == c
+    let a = getchar()  " Ascii
+    let c = nr2char(a) " Char
+    let n = str2nr(c)  " Number
+    if     "\<Left>" ==a || 'h'==c
         bprevious
-    elseif "\<Right>" == c
-        bNext
-    elseif "\<Down>" == c
+    elseif "\<Down>" ==a || 'j'==c
         bdelete
+    elseif "\<Up>"   ==a || 'k'==c
+        b#
+    elseif "\<Right>"==a || 'l'==c
+        bNext
     else
         " 1-9の数値入力の場合、番号指定でバッファ移動する。
-        let num = str2nr(nr2char(c))
-        if 0<num && bufexists(num)
-            execute ":buffer " . num
+        if 0<n && bufexists(n)
+            execute ":buffer " . n
         endif
     endif
+
     " 画面更新
     redraw
 endfunction
+
 
 
 "
