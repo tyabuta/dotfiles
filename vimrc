@@ -144,7 +144,7 @@ nnoremap <Tab> <C-w>p
 nnoremap <silent> <F5> :call ImportCurrentBuffer()<CR>
 
 " ビルドコマンドまたは、シンタックスチェック。
-nnoremap <F7> :call autoload#Build()<CR>
+nnoremap <F7> :call macro#Build()<CR>
 
 " .vimrcの再読み込み
 nnoremap <F8> :source ~/.vimrc<CR>
@@ -161,13 +161,13 @@ nnoremap <C-p> "0p
 
 
 " 日付の挿入
-nnoremap <silent> <C-c><C-d> :call autoload#DateInsert()<CR>
+nnoremap <silent> <C-c><C-d> :call macro#DateInsert()<CR>
 
 " 検索結果のハイライトを解除
 nnoremap <silent> <C-c><C-h> :nohlsearch<CR>
 
 " Shift-bでバッファ操作
-nnoremap <silent> <S-b> :call autoload#BufferControl()<CR>
+nnoremap <silent> <S-b> :call macro#BufferControl()<CR>
 
 
 " バッファの切り替え
