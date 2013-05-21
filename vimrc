@@ -166,6 +166,13 @@ nnoremap <silent> <C-c>d :call macro#DateInsert()<CR>
 " 検索結果のハイライトを解除
 nnoremap <silent> <C-c>h :nohlsearch<CR>
 
+" コメントライン書き込み(Shif-l強調版)
+nnoremap <silent> <C-c>l
+\ :call macro#CommentOutputLineWithFileType(macro#FileType(), 0)<CR>
+nnoremap <silent> <C-c><S-l>
+\ :call macro#CommentOutputLineWithFileType(macro#FileType(), 1)<CR>
+
+
 
 " Shift-bでバッファ操作
 nnoremap <silent> <S-b> :call macro#BufferControl()<CR>

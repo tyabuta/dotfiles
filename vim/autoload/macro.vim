@@ -228,3 +228,41 @@ function! macro#CommentOutputLine(line, begin_str, end_str, char)
     call setline(cur_line, str)
 endfunction
 
+"
+"
+" vimファイル用のコメントライン書き込み関数
+" linetype: 0 -> " -----
+"           1 -> " *****
+"
+function! macro#CommentOutputLineForVim(linetype)
+    call macro#CommentOutputLine(".",
+        \ '" ',
+        \ '',
+        \ (a:linetype? '*' : '-'))
+endfunction
+
+"
+"
+" Shellスクリプト用のコメントライン書き込み関数
+" Ruby, Perlでも使用可。
+" linetype: 0 -> # -----
+"           1 -> # *****
+"
+function! macro#CommentOutputLineForShell(linetype)
+    call macro#CommentOutputLine(".",
+        \ '# ',
+        \ '',
+        \ (a:linetype? '*' : '-'))
+endfunction
+
+"
+" ファイルタイプに応じてコメントによるラインを書き込む。
+"
+function! macro#CommentOutputLineWithFileType(ftype, linetype)
+    if "vim"==a:ftype
+        call macro#CommentOutputLineForVim(a:linetype)
+    elseif "sh"==a:ftype || "ruby"==a:ftype || "perl"==a:ftype
+        call macro#CommentOutputLineForShell(a:linetype)
+    endif
+endfunction
+
