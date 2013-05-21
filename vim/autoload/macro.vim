@@ -208,3 +208,23 @@ endfunction
 
 
 
+
+"
+" コメントによる線を引く。
+"
+"      line: 行を表す表記
+" begin_str: コメントの始まり
+"   end_str: コメントの終わり
+"      char: ライン形成に使用する文字
+"
+function! macro#CommentOutputLine(line, begin_str, end_str, char)
+    let cur_line = line(a:line)
+    " コメントの最大列数
+    let col_max = 70
+
+    let str = a:begin_str
+    let str.= repeat(a:char, col_max - strlen(a:begin_str . a:end_str))
+    let str.= a:end_str
+    call setline(cur_line, str)
+endfunction
+
