@@ -161,10 +161,11 @@ nnoremap <C-p> "0p
 
 
 " 日付の挿入
-nnoremap <silent> <C-c><C-d> :call macro#DateInsert()<CR>
+nnoremap <silent> <C-c>d :call macro#DateInsert()<CR>
 
 " 検索結果のハイライトを解除
-nnoremap <silent> <C-c><C-h> :nohlsearch<CR>
+nnoremap <silent> <C-c>h :nohlsearch<CR>
+
 
 " Shift-bでバッファ操作
 nnoremap <silent> <S-b> :call macro#BufferControl()<CR>
