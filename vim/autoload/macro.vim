@@ -230,6 +230,19 @@ endfunction
 
 "
 "
+" textファイル用のコメントライン書き込み関数
+" linetype: 0 -> -----
+"           1 -> =====
+"
+function! macro#CommentOutputLineForText(linetype)
+    call macro#CommentOutputLine(".",
+        \ '',
+        \ '',
+        \ (a:linetype? '=' : '-'))
+endfunction
+
+"
+"
 " vimファイル用のコメントライン書き込み関数
 " linetype: 0 -> " -----
 "           1 -> " *****
@@ -263,6 +276,8 @@ function! macro#CommentOutputLineWithFileType(ftype, linetype)
         call macro#CommentOutputLineForVim(a:linetype)
     elseif "sh"==a:ftype || "ruby"==a:ftype || "perl"==a:ftype
         call macro#CommentOutputLineForShell(a:linetype)
+    else
+        call macro#CommentOutputLineForText(a:linetype)
     endif
 endfunction
 
