@@ -47,17 +47,21 @@ function! macro#PromptSelectMenuList(msg, items)
     " echo出力があふれた時にMore表示が出ないようにする。
     call macro#MorePromptSetEnabled(0)
 
-    let sel = 0
     let items_lentgh = len(a:items)
+    let sel = 0
     while 1
-        " --- 描画 ---
-        redraw | echo a:msg
+        " --- 描画バッファ ---
+        let buf = a:msg . "\n"
         let i = 0
         for item in a:items
-            echo (sel==i? '->' : '  ') . item
+            let buf .= printf("%s%s\n", sel==i? '->' : '  ', item)
             let i+=1
         endfor
-        echo printf("sel:%2d (^,v:Select  <:Cancel  >:OK) ", sel)
+        let buf .= printf("sel:%2d (^,v:Select  <:Cancel  >:OK) ", sel)
+
+        " --- 描画 ---
+        redraw
+        echo buf
 
         " --- 入力 ---
         let a = getchar()
