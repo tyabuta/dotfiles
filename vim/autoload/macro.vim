@@ -192,7 +192,7 @@ function! macro#BufferControl()
         bprevious
     elseif "\<Down>" ==a || 'j'==c
         bdelete
-    elseif "\<Up>"   ==a || 'k'==c
+    elseif "\<Up>"   ==a || 'k'==c || '#'==c
         b#
     elseif "\<Right>"==a || 'l'==c
         bNext
