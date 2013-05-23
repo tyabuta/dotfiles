@@ -19,6 +19,20 @@ function! macro#MorePrompt()
     return &g:more
 endfunction
 
+"
+" コマンド高さ値
+"
+function! macro#CommandHeight()
+    return &g:cmdheight
+endfunction
+
+"
+" コマンド高さ野設定
+"
+function! macro#CommandHeightSetValue(h)
+    execute ":set cmdheight=" . a:h
+endfunction
+
 
 "
 " コマンドラインに選択リストを表示する。
