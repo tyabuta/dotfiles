@@ -33,6 +33,13 @@ function! macro#CommandHeightSetValue(h)
     execute ":set cmdheight=" . a:h
 endfunction
 
+"
+" 配列要素に指定オブジェクトは含まれるか調べる。
+" 配列内に要素がさればゼロ以外を返す。
+"
+function! macro#ArrayHasObject(arr, obj)
+    return count(a:arr, a:obj)
+endfunction
 
 "
 " コマンドラインに選択リストを表示する。
