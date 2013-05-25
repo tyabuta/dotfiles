@@ -184,7 +184,7 @@ alias git-instaweb="git  instaweb --http=webrick"
 # git commit の省略
 git-commit(){
     if [ "" != "$1" ]; then
-        git commit -m "\"$1\""
+        git commit -m "$1"
     else
         git commit
     fi
