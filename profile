@@ -91,6 +91,16 @@ proc() {
     ! ps aux | grep "$1" && ps aux
 }
 
+#
+# grep -i <RegEx> [File]
+#
+search-regex(){
+    if [ "" == "$1" ]; then
+        echo "usage: search-regex <RegEx> [File]"
+    else
+        grep -i "$1" "$2"
+    fi
+}
 
 
 # -----------------------------------------------
