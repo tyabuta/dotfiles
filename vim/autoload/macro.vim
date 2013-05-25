@@ -218,6 +218,14 @@ function! macro#PHPSyntaxCheck()
     execute ":!php --syntax-check %"
 endfunction
 
+"
+" Bash用のシンタックスチェック
+"
+function! macro#BashSyntaxCheck()
+    execute ":silent !clear"
+    execute ":silent !echo Bash Syntax Check"
+    execute ":!bash -n %"
+endfunction
 
 "
 " ビルドコマンド、またはシンタックスチェックを
@@ -225,8 +233,10 @@ endfunction
 "
 function! macro#Build()
     let filetype = macro#FileType()
-    if "php" == filetype
+    if    "php" == filetype
         call macro#PHPSyntaxCheck()
+    elseif "sh" == filetype
+        call macro#BashSyntaxCheck()
     else
         echo printf("[%s]に適切なビルドコマンドが見つかりません。", filetype)
     endif
