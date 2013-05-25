@@ -243,6 +243,37 @@ function! macro#Build()
 endfunction
 
 
+"
+" カレントバッファをsourceコマンドで読み込む
+"
+function! macro#VimImport()
+    echo "Vim Import " . expand("%:p")
+    source %
+endfunction
+
+"
+" スクリプト実行関数
+"
+function! macro#RunScript()
+    execute ":silent !clear"
+    execute ":silent !echo Script run"
+    execute ":!./%"
+endfunction
+
+"
+" Runコマンド
+" ファイルタイプに応じて行う。
+"
+function! macro#Run()
+    let filetype = macro#FileType()
+    if    "vim" == filetype
+        call macro#VimImport()
+    elseif "sh" == filetype
+        call macro#RunScript()
+    else
+        echo printf("[%s]に適切なRunコマンドが見つかりません。", filetype)
+    endif
+endfunction
 
 
 "

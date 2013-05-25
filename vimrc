@@ -141,7 +141,7 @@ nnoremap <S-k> <C-b>
 nnoremap <Tab> <C-w>p
 
 " vim スクリプトの読み込み(カレントバッファ)
-nnoremap <silent> <F5> :call ImportCurrentBuffer()<CR>
+nnoremap <F5> :call macro#Run()<CR>
 
 " ビルドコマンドまたは、シンタックスチェック。
 nnoremap <F7> :call macro#Build()<CR>
@@ -228,16 +228,6 @@ command! RegisterList :reg
 " -----------------------------------------------
 " Functions
 " -----------------------------------------------
-
-"
-" カレントバッファをsourceコマンドで読み込む
-"
-function! ImportCurrentBuffer()
-    if "vim" == &l:filetype
-        echo "import " . expand("%:p")
-        source %
-    endif
-endfunction
 
 "
 " シンタックスハイライトを切り替える。(enable/off)
