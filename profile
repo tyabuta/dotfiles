@@ -126,6 +126,20 @@ search-file-with-regex(){
     fi
 }
 
+#
+# テキストファイルのエンコードをUTF-8に変換する。
+# nkf -w <Source> <Output>
+#
+encode-utf8(){
+    if [ "" == "$1" -o "" == "$2" ]; then
+        echo "usage: encode-utf <Source> <Output>"
+    else
+        nkf -w "$1" > "$2"
+    fi
+}
+
+
+
 # -----------------------------------------------
 # alias設定
 # -----------------------------------------------
