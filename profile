@@ -102,6 +102,29 @@ search-regex(){
     fi
 }
 
+#
+# PATHが一致するファイルを出力する。
+# find . -iname <FileName>
+#
+search-file-with-name(){
+    if [ "" == "$1" ]; then
+        echo "usage: search-file-with-name <FileName>"
+    else
+        find . -iname "$1"
+    fi
+}
+
+#
+# PATHが正規表現にマッチするファイルを出力する。
+# find . -iname <RegEx>
+#
+search-file-with-regex(){
+    if [ "" == "$1" ]; then
+        echo "usage: search-file-with-regex <RegEx>"
+    else
+        find . -regex "$1"
+    fi
+}
 
 # -----------------------------------------------
 # alias設定
