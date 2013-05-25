@@ -66,7 +66,7 @@ fi
 # OS環境別設定
 # -----------------------------------------------
 UNAME=`uname`
-if [ $UNAME = "Darwin" ]; then
+if [ "Darwin" == "$UNAME" ]; then
     # Mac用
     alias ls="ls -G"
     alias la="ls -a"
