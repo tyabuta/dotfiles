@@ -228,15 +228,26 @@ function! macro#BashSyntaxCheck()
 endfunction
 
 "
+" Ruby用のシンタックスチェック
+"
+function! macro#RubySyntaxCheck()
+    execute ":silent !clear"
+    execute ":silent !echo Ruby Syntax Check"
+    execute ":!ruby -cw %"
+endfunction
+
+"
 " ビルドコマンド、またはシンタックスチェックを
 " ファイルタイプに応じて行う。
 "
 function! macro#Build()
     let filetype = macro#FileType()
-    if    "php" == filetype
+    if      "php" == filetype
         call macro#PHPSyntaxCheck()
-    elseif "sh" == filetype
+    elseif   "sh" == filetype
         call macro#BashSyntaxCheck()
+    elseif "ruby" == filetype
+        call macro#RubySyntaxCheck()
     else
         echo printf("[%s]に適切なビルドコマンドが見つかりません。", filetype)
     endif
