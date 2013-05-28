@@ -77,10 +77,10 @@ function! macro#PromptSelectMenuList(msg, items)
             let sel+=1
         elseif "\<Up>"    ==a || 'k'==c
             let sel-=1
-        elseif "\<Left>"  ==a || 'h'==c
+        elseif "\<Left>"  ==a || 'h'==c || 27==a
             let sel = -1
             break
-        elseif "\<Right>" ==a || 'l'==c
+        elseif "\<Right>" ==a || 'l'==c || 13==a
             break
         endif
         " インデックスのループ計算
