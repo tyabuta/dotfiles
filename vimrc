@@ -173,6 +173,8 @@ nnoremap <silent> <C-c><S-l>
 \ :call macro#CommentOutputLineWithFileType(macro#FileType(), 1)<CR>
 
 
+" Shift-mでコマンドメニュー
+nnoremap <silent> <S-m> :call CommandMenu#Show()<CR>
 
 " Shift-bでバッファ操作
 nnoremap <silent> <S-b> :call macro#BufferControl()<CR>
