@@ -240,11 +240,15 @@ endfunction
 " カレントバッファの不要な末尾空白を消去する。
 "
 function! ClearTailSpace()
+    let pos = getpos(".")
+
     " マッチしない場合にError表示が出るのでトラップする。
     try
         %s/\s\+$//
     catch
     endtry
+
+    call setpos(".", pos)
 endfunction
 
 
