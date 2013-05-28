@@ -138,6 +138,16 @@ encode-utf8(){
     fi
 }
 
+#
+# 環境変数PATHに新しいPathを通す。
+#
+path-insert(){
+    if [ "" == "$1" ]; then
+        echo "udage: path-insert <Path>"
+    else
+        export PATH="$1:$PATH"
+    fi
+}
 
 
 # -----------------------------------------------
