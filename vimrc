@@ -180,16 +180,6 @@ nnoremap <silent> <S-m> :call CommandMenu#Show()<CR>
 nnoremap <silent> <S-b> :call macro#BufferControl()<CR>
 
 
-" バッファの切り替え
-nnoremap <Space>b :ls<CR>:buffer
-
-" 次のバッファへ移動
-nnoremap <Space>n :bn<CR>
-
-" 前回表示していたバッファに移動
-nnoremap <Space>v :b#<CR>
-
-nnoremap <Space>e :vs<CR>:e.<CR>
 
 
 " -----------------------------------------------
