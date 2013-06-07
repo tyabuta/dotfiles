@@ -301,7 +301,7 @@ function! macro#CommentOutputLine(line, begin_str, end_str, char)
     let col_max = 70
 
     let str = a:begin_str
-    let str.= repeat(a:char, col_max - strlen(a:begin_str . a:end_str))
+    let str.= repeat(a:char, col_max - strlen(a:begin_str . a:end_str) - 1)
     let str.= a:end_str
     call setline(cur_line, str)
 endfunction
