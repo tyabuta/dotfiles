@@ -1,7 +1,15 @@
+" *******************************************************************
+"
+"                          コマンドメニュー
+"
+"                                                 (c) 2013 tyabuta.
+" *******************************************************************
 
-"
+
+
+" -------------------------------------------------------------------
 " メニューアイテム配列から、ディスプレイ配列を生成する。
-"
+" -------------------------------------------------------------------
 function! s:get_display_array(menu)
     let arr = []
     for item in a:menu
@@ -31,7 +39,7 @@ function! s:command_menu_for_insert()
     endfunction
 
     let menu = [item1, item2, item3]
-    let ret = macro#PromptSelectMenuList("*** Command Menu ***",
+    let ret = macro#PromptSelectMenuList("*** Command Menu [Insert] ***",
                                        \ s:get_display_array(menu))
     if -1 != ret
         call menu[ret].func()
