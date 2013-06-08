@@ -10,11 +10,10 @@ function! s:get_display_array(menu)
     return arr
 endfunction
 
-
-"
-" 「挿入」メニュー用のコマンドメニュー
-"
-function! s:command_menu_insert()
+" -------------------------------------------------------------------
+" 「挿入」用のコマンドメニュー
+" -------------------------------------------------------------------
+function! s:command_menu_for_insert()
 
     let item1 = {'display': "コメントライン"}
     function item1.func()
@@ -69,12 +68,12 @@ endfunction
 " -------------------------------------------------------------------
 " コマンドメニュー
 " 選択メニュー形式で、コマンド機能を呼び出せる。
-"
+" -------------------------------------------------------------------
 function! CommandMenu#Show()
 
     let item1 = {'display': "そうにゅう"}
     function item1.func()
-        call s:command_menu_insert()
+        call s:command_menu_for_insert()
     endfunction
 
     let item2 = {'display': "へんしゅう"}
