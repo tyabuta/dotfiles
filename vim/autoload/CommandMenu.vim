@@ -40,7 +40,33 @@ function! s:command_menu_insert()
 endfunction
 
 
-"
+" -------------------------------------------------------------------
+" 「ヘルプ」用のコマンドメニュー
+" -------------------------------------------------------------------
+function! s:command_menu_for_help()
+
+    let item1 = {'display': "カーソル操作"}
+    function item1.func()
+        call Help#CursorControl()
+    endfunction
+
+    let item2 = {'display': "レジスタについて"}
+    function item2.func()
+        "call macro#MorePromptSetEnabled(1)
+        call Help#Register()
+        "call macro#MorePromptSetEnabled(0)
+    endfunction
+
+    let menu = [item1, item2]
+    let ret = macro#PromptSelectMenuList("*** Command Menu [Help] ***",
+                                       \ s:get_display_array(menu))
+    if -1 != ret
+        call menu[ret].func()
+    endif
+endfunction
+
+
+" -------------------------------------------------------------------
 " コマンドメニュー
 " 選択メニュー形式で、コマンド機能を呼び出せる。
 "
@@ -56,7 +82,12 @@ function! CommandMenu#Show()
         echo "未実装"
     endfunction
 
-    let menu = [item1, item2]
+    let item3 = {'display': "ヘルプ"}
+    function item3.func()
+        call s:command_menu_for_help()
+    endfunction
+
+    let menu = [item1, item2, item3]
     let ret = macro#PromptSelectMenuList("*** Command Menu ***",
                                        \ s:get_display_array(menu))
     if -1 != ret
