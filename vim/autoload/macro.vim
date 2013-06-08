@@ -1,4 +1,17 @@
 
+
+
+" -----------------------------------------------
+" テキストファイルの文字列読み込み関数
+" -----------------------------------------------
+function! macro#ReadText(filename)
+    let buf = ""
+    for line in readfile(a:filename)
+        let buf .= line . "\n"
+    endfor
+    return buf
+endfunction
+
 "
 " more-promptの設定をする。
 " 1 -> more  0 -> nomore
