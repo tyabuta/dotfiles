@@ -8,8 +8,34 @@
 " vi互換モードを解除
 set nocompatible
 
-" neocomplcache
-set runtimepath+=$HOME/.vim/neocomplcache
+" -------------------------------------------------------------------
+" NeoBundle
+" -------------------------------------------------------------------
+" neobundleをランタイムPATHに挿入
+if has('vim_starting')
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+" bundleディレクトリの登録
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+" -------- Bundle管理 ---------
+
+NeoBundle 'Shougo/neocomplcache.vim'
+
+
+" ----- End of Bundle管理 -----
+" ------------------
+filetype plugin indent on
+NeoBundleCheck
+
+
+
+" -------------------------------------------------------------------
+" NeoComplcache
+" -------------------------------------------------------------------
+
+" 補完機能を有効にする。
 let g:neocomplcache_enable_at_startup = 1
 
 " タブで補完を確定する。
