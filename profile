@@ -154,6 +154,9 @@ path-insert(){
 # alias設定
 # -----------------------------------------------
 alias cls="clear"
+if [[ "$(uname)" =~ "CYGWIN" ]]; then
+    alias ls="ls -h --color=tty"
+fi
 alias la="ls -la"
 alias rmf="rm -Rf"
 alias vimsudo="sudo -H vim"
