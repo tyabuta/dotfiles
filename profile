@@ -37,7 +37,8 @@ stty stop undef
 #
 # X-Window Input Method用の設定
 #
-if [ `which ibus-daemon` ] ; then
+which ibus-daemon >/dev/null 2>&1
+if [ 0 == $0 ] ; then
     export XMODIFIERS=@im=ibus
     export GTK_IM_MODULE=ibus
     export QT_IM_MODULE=ibus
