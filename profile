@@ -56,6 +56,11 @@ if [ -d "$HOME/Dropbox/bin" ] ; then
     PATH="$HOME/Dropbox/bin:$PATH"
 fi
 
+# ~/ScriptTools
+if [ -d "$HOME/ScriptTools" ] ; then
+    PATH="$HOME/ScriptTools:$PATH"
+fi
+
 # ~/bin
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
