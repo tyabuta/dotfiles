@@ -170,9 +170,6 @@ alias desktop="cd ~/Desktop"
 alias dotfiles="cd ~/dotfiles"
 alias download="curl -L -O"
 
-# Dropbox内にあるbinディレクトリのコマンド一覧を出力する。
-alias list="ls ~/Dropbox/bin/"
-
 # tmux のセッションを呼び出す。
 # 起動していない場合はセッション作成を行う。
 alias tmux="! tmux a > /dev/null 2>&1 && tmux > /dev/null 2>&1 "
