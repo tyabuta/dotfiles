@@ -169,6 +169,8 @@ alias vimsudo="sudo -H vim"
 alias desktop="cd ~/Desktop"
 alias dotfiles="cd ~/dotfiles"
 alias download="curl -L -O"
+alias diff="diff --unified --ignore-space-change"
+
 
 # tmux のセッションを呼び出す。
 # 起動していない場合はセッション作成を行う。
