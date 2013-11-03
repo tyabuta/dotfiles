@@ -268,7 +268,7 @@ function! macro#Run()
     let filetype = macro#FileType()
     if    "vim" == filetype
         call macro#VimImport()
-    elseif macro#ArrayHasObject(["sh","ruby"], filetype)
+    elseif macro#ArrayHasObject(["sh","ruby","php","python"], filetype)
         call macro#RunScript()
     else
         echo printf("[%s]に適切なRunコマンドが見つかりません。", filetype)
