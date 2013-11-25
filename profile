@@ -52,6 +52,11 @@ fi
 
 PATH="/usr/local/bin:$PATH"
 
+# Heroku
+if [ -d "/usr/local/heroku/bin" ] ; then
+    export PATH="/usr/local/heroku/bin:$PATH"
+fi
+
 # ~/Dropbox/bin
 if [ -d "$HOME/Dropbox/bin" ] ; then
     PATH="$HOME/Dropbox/bin:$PATH"
@@ -84,6 +89,10 @@ if [ "Darwin" == "$UNAME" ]; then
 fi
 
 
+#
+# rbenv
+#
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # -----------------------------------------------
 # functions
@@ -210,6 +219,5 @@ git-commit(){
         git commit
     fi
 }
-
 
 
