@@ -72,10 +72,11 @@ set number
 set ruler
 
 " シンタックスハイライトを有効にする。
-syntax on
+"syntax on
+
 
 " カラースキームを設定する。
-colorscheme ron
+"colorscheme ron
 
 " 検索結果のハイライト(設定しない場合はデフォルトでNo)
 set hlsearch
