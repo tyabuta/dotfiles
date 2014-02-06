@@ -98,6 +98,22 @@ if which rbenv > /dev/null 2>&1; then eval "$(rbenv init -)"; fi
 # functions
 # -----------------------------------------------
 
+
+# パターンにマッチするファイルの指定キーワードを検索する
+# file-grep <FileName-RegExp> <Keyword-RegExp>
+function file-grep(){
+  local iname="$1"
+  local keyword="$2"
+  find ./ -iname $1 | xargs grep $2
+}
+
+# ファイル名検索をおこなう
+# file-find <Keyword>
+function file-find(){
+  local keyword="$1"
+  find ./ -iname $keyword
+}
+
 #
 # プロセス表示関数
 #
