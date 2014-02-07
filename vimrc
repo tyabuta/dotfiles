@@ -9,6 +9,12 @@ scriptencoding utf-8
 " vi互換モードを解除
 set nocompatible
 
+
+if 0 == isdirectory($VIMRUNTIME)
+    echo "Not found runtime directory: " . $VIMRUNTIME
+endif
+
+
 " -------------------------------------------------------------------
 " NeoBundle
 " -------------------------------------------------------------------
@@ -72,7 +78,7 @@ set number
 set ruler
 
 " シンタックスハイライトを有効にする。
-"syntax on
+syntax on
 
 
 " カラースキームを設定する。
