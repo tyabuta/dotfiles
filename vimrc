@@ -29,6 +29,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " -------- Bundle管理 ---------
 
 NeoBundle 'Shougo/neocomplcache.vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'w0ng/vim-hybrid'
 
 
 " ----- End of Bundle管理 -----
@@ -83,6 +85,9 @@ syntax on
 
 " カラースキームを設定する。
 "colorscheme ron
+"colorscheme hybrid
+colorscheme hybrid-light
+
 
 " 検索結果のハイライト(設定しない場合はデフォルトでNo)
 set hlsearch
