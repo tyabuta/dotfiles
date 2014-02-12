@@ -7,5 +7,5 @@ Font=ＭＳ ゴシック
 FontIsBold=no
 Columns=120
 Rows=40
-
-
+RightClickAction=menu
+ClicksTargetApp=no

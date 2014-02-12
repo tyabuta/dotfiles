@@ -28,15 +28,22 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 " -------- Bundle管理 ---------
 
-NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'Shougo/unite.vim'
-
+NeoBundle 'Shougo/neocomplcache.vim'
 
 " ----- End of Bundle管理 -----
 " ------------------
 filetype plugin indent on
 NeoBundleCheck
 
+
+" -------------------------------------------------------------------
+" Unite
+" -------------------------------------------------------------------
+" ショートカットキー設定
+nnoremap <silent> <S-b> :Unite buffer<CR>
+nnoremap <silent> <S-r> :Unite file_mru<CR>
+nnoremap <silent> <S-f> :Unite buffer file_mru file<CR>
 
 
 " -------------------------------------------------------------------
@@ -48,7 +55,6 @@ let g:neocomplcache_enable_at_startup = 1
 
 " タブで補完を確定する。
 inoremap <expr><TAB>   pumvisible() ? "<CR>" : "\<TAB>"
-
 
 
 
@@ -211,8 +217,7 @@ nnoremap <silent> <C-c><S-l>
 nnoremap <silent> <S-m> :call CommandMenu#Show()<CR>
 
 " Shift-bでバッファ操作
-nnoremap <silent> <S-b> :call macro#BufferControl()<CR>
-
+"nnoremap <silent> <S-b> :call macro#BufferControl()<CR>
 
 
 
