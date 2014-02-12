@@ -30,7 +30,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'w0ng/vim-hybrid'
 
 
 " ----- End of Bundle管理 -----
@@ -82,12 +81,8 @@ set ruler
 " シンタックスハイライトを有効にする。
 syntax on
 
-
 " カラースキームを設定する。
-"colorscheme ron
-"colorscheme hybrid
-colorscheme hybrid-light
-
+colorscheme ron
 
 " 検索結果のハイライト(設定しない場合はデフォルトでNo)
 set hlsearch
