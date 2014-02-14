@@ -12,6 +12,7 @@ rm "$HOME/.vimrc"     > /dev/null 2>&1
 rm "$HOME/.vim"       > /dev/null 2>&1
 rm "$HOME/.emacs.d"   > /dev/null 2>&1
 rm "$HOME/.minttyrc"  > /dev/null 2>&1
+rm "$HOME/.screenrc"  > /dev/null 2>&1
 
 # バックアップに保管していたファイルを配置
 [ -d $backup_dir ] && cp $backup_dir/.* $HOME/ > /dev/null 2>&1

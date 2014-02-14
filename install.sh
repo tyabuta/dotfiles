@@ -59,6 +59,7 @@ backup .emacs.d
 backup .bashrc
 backup .bash_profile
 backup .minttyrc
+backup .screenrc
 
 
 # リンクを張る
@@ -67,6 +68,8 @@ link profile
 link vimrc
 link vim
 link emacs.d
+link screenrc
+
 
 if [[ "$(uname)" =~ "CYGWIN" ]]; then
     link minttyrc
