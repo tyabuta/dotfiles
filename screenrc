@@ -7,3 +7,9 @@ caption always "%-w%10L>%{=b bw}%n %t%{-}%+w%-0="
 # スクリーン名と時刻表示
 hardstatus alwayslastline "%H%=%Y/%m/%d %02c"
 
+# 起動時のメッセージを非表示
+startup_message off
+
+# マウスホイールを利用可
+termcapinfo xterm* ti@:te@
+
