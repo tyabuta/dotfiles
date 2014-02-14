@@ -40,11 +40,22 @@ NeoBundleCheck
 " -------------------------------------------------------------------
 " Unite
 " -------------------------------------------------------------------
-" ショートカットキー設定
+
+" unite-menu
+let g:unite_source_menu_menus = {}
+let g:unite_source_menu_menus.shortcat = {
+    \'description': 'shortcat'
+    \ }
+
+let g:unite_source_menu_menus.shortcat.command_candidates = {
+    \ 'vimrc': "e $HOME/.vimrc",
+    \ }
+
+" unite キーバインド
 nnoremap <silent> <S-b> :Unite buffer<CR>
 nnoremap <silent> <S-r> :Unite file_mru<CR>
 nnoremap <silent> <S-f> :Unite buffer file_mru file<CR>
-
+nnoremap <silent> <S-m> :Unite menu:shortcat<CR>
 
 " -------------------------------------------------------------------
 " NeoComplcache
@@ -214,7 +225,7 @@ nnoremap <silent> <C-c><S-l>
 
 
 " Shift-mでコマンドメニュー
-nnoremap <silent> <S-m> :call CommandMenu#Show()<CR>
+"nnoremap <silent> <S-m> :call CommandMenu#Show()<CR>
 
 " Shift-bでバッファ操作
 "nnoremap <silent> <S-b> :call macro#BufferControl()<CR>
