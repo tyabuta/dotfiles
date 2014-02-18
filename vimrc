@@ -80,7 +80,8 @@ set fileformat  =unix
 set fileencodings =utf-8,ucs-bom,euc-jp,cp932,iso-2022-jp,ucs-21e,ucs-2
 set fileformats   =unix,dos,mac
 
-
+" 全角記号の表示調整
+set ambiwidth=double
 
 " -----------------------------------------------
 " 表示関連
@@ -127,6 +128,11 @@ if has('gui_macvim')
 endif
 
 set shortmess+=I
+
+" スクロール遅延の軽減
+set lazyredraw
+set ttyfast
+
 
 
 " -----------------------------------------------
