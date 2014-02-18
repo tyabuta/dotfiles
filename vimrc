@@ -51,10 +51,14 @@ let g:unite_source_menu_menus.shortcat.command_candidates = {
     \ 'vimrc': "e $HOME/.vimrc",
     \ }
 
+" unite-mru
+let g:unite_source_file_mru_limit = 100
+
 " unite キーバインド
 nnoremap <silent> <S-b> :Unite buffer<CR>
 nnoremap <silent> <S-r> :Unite file_mru<CR>
-nnoremap <silent> <S-f> :Unite buffer file_mru file<CR>
+nnoremap <silent> <S-c> :Unite bookmark<CR>
+nnoremap <silent> <S-f> :Unite buffer bookmark file_mru directory_mru file<CR>
 nnoremap <silent> <S-m> :Unite menu:shortcat<CR>
 
 " -------------------------------------------------------------------
@@ -184,6 +188,8 @@ let html_number_lines=0
 " クリップボード共有(guiでないと意味がない)
 set clipboard=unnamed,autoselect
 
+" 外部からファイル更新された場合、自動でリロードする。
+set autoread
 
 
 " -----------------------------------------------
