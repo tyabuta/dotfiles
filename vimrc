@@ -54,12 +54,16 @@ let g:unite_source_menu_menus.shortcat.command_candidates = {
 " unite-mru
 let g:unite_source_file_mru_limit = 100
 
+" unite-history/yank
+let g:unite_source_history_yank_enable = 1
+
 " unite キーバインド
 nnoremap <silent> <S-b> :Unite buffer<CR>
 nnoremap <silent> <S-r> :Unite file_mru<CR>
 nnoremap <silent> <S-c> :Unite bookmark<CR>
 nnoremap <silent> <S-f> :Unite buffer bookmark file_mru directory_mru file<CR>
 nnoremap <silent> <S-m> :Unite menu:shortcat<CR>
+nnoremap <silent> <S-h> :Unite history/yank<CR>
 
 " -------------------------------------------------------------------
 " NeoComplcache
