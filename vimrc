@@ -17,6 +17,8 @@ endif
 
 " -------------------------------------------------------------------
 " NeoBundle
+"
+" 更新 - :NeoBundleUpdate
 " -------------------------------------------------------------------
 " neobundleをランタイムPATHに挿入
 if has('vim_starting')
@@ -30,6 +32,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache.vim'
+NeoBundle 'Shougo/neomru.vim'
 
 " ----- End of Bundle管理 -----
 " ------------------
