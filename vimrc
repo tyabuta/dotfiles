@@ -33,6 +33,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/vimfiler.vim'
 
 " ----- End of Bundle管理 -----
 " ------------------
@@ -79,6 +80,15 @@ let g:neocomplcache_enable_at_startup = 1
 " タブで補完を確定する。
 inoremap <expr><TAB>   pumvisible() ? "<CR>" : "\<TAB>"
 
+
+" -------------------------------------------------------------------
+" vimfiler
+" -------------------------------------------------------------------
+
+let g:vimfiler_as_default_explorer = 1
+
+
+nnoremap <silent> <S-e> :VimFilerExplorer<CR>
 
 
 " -----------------------------------------------
