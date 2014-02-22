@@ -209,6 +209,9 @@ set clipboard=unnamed,autoselect
 " 外部からファイル更新された場合、自動でリロードする。
 set autoread
 
+" ビープオンをフラッシュ表示に切り替え
+set visualbell
+
 
 " -----------------------------------------------
 " キーバインド
