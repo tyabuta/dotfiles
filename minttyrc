@@ -9,3 +9,4 @@ Columns=120
 Rows=40
 RightClickAction=menu
 ClicksTargetApp=no
+Term=xterm-256color
