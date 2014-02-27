@@ -3,7 +3,7 @@
 #                            .bashrc
 #                                             (c) 2011-2014 tyabuta.
 #####################################################################
-echo "import .profile"
+echo "import .bashrc"
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
