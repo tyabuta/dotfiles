@@ -52,8 +52,10 @@ let g:unite_source_menu_menus.shortcat = {
     \ }
 
 let g:unite_source_menu_menus.shortcat.command_candidates = {
-    \ 'vimrc':    "e $HOME/.vimrc",
-    \ 'bookmark': "e $HOME/.cache/unite/bookmark",
+    \ 'Edit     vimrc':     "e $HOME/.vimrc",
+    \ 'Explorer bookmark':  "VimFilerExplorer $HOME/.cache/unite/bookmark",
+    \ 'Switch   number':    "call macro#ToggleNumberDisplay()",
+    \ 'Switch   expandtab': "call macro#ToggleExpandtab()",
     \ }
 
 " unite-mru

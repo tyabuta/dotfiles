@@ -348,3 +348,30 @@ function! macro#CommentOutputLineWithFileType(ftype, linetype)
     endif
 endfunction
 
+
+"
+" 行数表示を切り替える
+"
+function! macro#ToggleNumberDisplay()
+    if 0 == &l:number
+        let &l:number = 1
+    else
+        let &l:number = 0
+    endif
+endfunction
+
+
+"
+" タブの展開設定を切り替える
+"
+function! macro#ToggleExpandtab()
+    if 0 == &l:expandtab
+        let &l:expandtab = 1
+        echo "set expandtab"
+    else
+        let &l:expandtab = 0
+        echo "set noexpandtab"
+    endif
+endfunction
+
+
