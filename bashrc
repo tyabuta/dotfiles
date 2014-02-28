@@ -172,6 +172,8 @@ alias vimsudo="sudo -H vim"
 alias desktop="cd ~/Desktop"
 alias dotfiles="cd ~/dotfiles"
 alias download="curl -L -O"
+alias screenx="screen -xR"
+
 
 # diff -u -b
 alias diff="diff --unified --ignore-space-change"
