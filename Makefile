@@ -18,3 +18,8 @@ install-%: %
 	cp $(HOME)/.$< $(HOME)/.$<.bak$(BAKDATE) 2>&1 | /dev/null
 	$(LINK) $(CURDIR)/$< $(HOME)/.$<
 
+
+VIMPATH=$(shell readlink -f $(shell which vim))
+git-config:
+	git config --global core.editor "$(VIMPATH)"
+
