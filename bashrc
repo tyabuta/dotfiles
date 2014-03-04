@@ -74,7 +74,7 @@ if which rbenv > /dev/null 2>&1; then eval "$(rbenv init -)"; fi
 function file-grep(){
   local filename=$1
   local keyword=$2
-  find ./ -iname "$filename" | xargs grep "$keyword"
+  find ./ -iname "$filename" | xargs grep -n "$keyword"
 }
 
 # ファイル名検索をおこなう
