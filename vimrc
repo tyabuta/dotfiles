@@ -14,7 +14,6 @@ if 0 == isdirectory($VIMRUNTIME)
     echo "Not found runtime directory: " . $VIMRUNTIME
 endif
 
-
 " -------------------------------------------------------------------
 " NeoBundle
 "
@@ -59,7 +58,7 @@ let g:unite_source_menu_menus.shortcat.command_candidates = {
     \ }
 
 " unite-mru
-let g:unite_source_file_mru_limit = 100
+let g:unite_source_file_mru_limit = 500
 
 " unite-history/yank
 let g:unite_source_history_yank_enable = 1
