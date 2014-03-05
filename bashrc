@@ -186,7 +186,8 @@ alias desktop="cd ~/Desktop"
 alias dotfiles="cd ~/dotfiles"
 alias download="curl -L -O"
 alias screenx="screen -xR"
-
+alias top="top -d 5"
+alias watch-ps-user='watch --interval=5 "ps ux"'
 
 # diff -u -b
 alias diff="diff --unified --ignore-space-change"
