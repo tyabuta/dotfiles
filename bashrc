@@ -158,6 +158,19 @@ function sf-routing-search(){
 }
 
 
+# symfonyのテンプレートファイルの検索をおこなう
+# sf-template-search <Action>
+function sf-template-search(){
+  local actionName=$1
+  find ./ -iname "${actionName}Success.php"
+}
+
+# symfonyのアクションメソッドの検索をおこなう
+# sf-action-search <Action>
+function sf-action-search(){
+  local actionName=$1
+  find ./ -iname "actions.class.php" | xargs grep -n "execute${actionName}"
+}
 
 # -----------------------------------------------
 # alias設定
