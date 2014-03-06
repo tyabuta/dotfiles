@@ -153,23 +153,38 @@ path-insert(){
 # symfonyのルーティング検索をおこなう
 # sf-routing-search <Keyword>
 function sf-routing-search(){
-  local keyword=$1
-  find ./ -iname "routing.yml" | xargs grep -5 "$keyword"
+    if [ -z "$1" ]; then
+        echo "usage: sf-routing-search <Keyword>"
+        return
+    fi
+
+    local keyword=$1
+    find ./ -iname "routing.yml" | xargs grep -5 "$keyword"
 }
 
 
 # symfonyのテンプレートファイルの検索をおこなう
 # sf-template-search <Action>
 function sf-template-search(){
-  local actionName=$1
-  find ./ -iname "${actionName}Success.php"
+    if [ -z "$1" ]; then
+        echo "usage: sf-template-search <Keyword>"
+        return
+    fi
+
+    local actionName=$1
+    find ./ -iname "${actionName}Success.php"
 }
 
 # symfonyのアクションメソッドの検索をおこなう
 # sf-action-search <Action>
 function sf-action-search(){
-  local actionName=$1
-  find ./ -iname "actions.class.php" | xargs grep -n "execute${actionName}"
+    if [ -z "$1" ]; then
+        echo "usage: sf-action-search <Keyword>"
+        return
+    fi
+
+    local actionName=$1
+    find ./ -iname "actions.class.php" | xargs grep -n "execute${actionName}"
 }
 
 # -----------------------------------------------
