@@ -77,6 +77,13 @@ function file-grep(){
   find ./ -iname "$filename" | xargs grep -n "$keyword"
 }
 
+# phpファイルのgrep検索
+# php-file-grep <Keyword-RegExp>
+function php-file-grep(){
+  local keyword=$1
+  find ./ -iname "*.php" | xargs grep -n "$keyword"
+}
+
 # ファイル名検索をおこなう
 # file-find <Keyword>
 function file-find(){
