@@ -249,7 +249,7 @@ git-commit(){
 
 alias git-log="git log --pretty=format:\"%h - %ad %an '%s'\" --date=iso"
 alias git-log-filename="git log --name-status"
-
+alias git-checkout-patch="git checkout --patch"
 
 
 
