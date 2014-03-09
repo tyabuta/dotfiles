@@ -30,4 +30,5 @@ git-config:
 	git config --global user.email  "$(GIT_USER_EMAIL)"
 	git config --global core.editor "$(VIMPATH)"
 	git config --global color.ui "auto"
+	git config --global core.whitespace cr-at-eol
 
