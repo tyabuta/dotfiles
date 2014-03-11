@@ -169,6 +169,17 @@ function sf-routing-search(){
     find ./ -iname "routing.yml" | xargs grep -5 "$keyword"
 }
 
+# symfonyのスキーマ検索をおこなう
+# sf-schema-search <Keyword>
+function sf-schema-search(){
+    if [ -z "$1" ]; then
+        echo "usage: sf-schema-search <Keyword>"
+        return
+    fi
+
+    local keyword=$1
+    find ./ -iname "*schema.yml" | xargs grep -n "$keyword"
+}
 
 # symfonyのテンプレートファイルの検索をおこなう
 # sf-template-search <Action>
