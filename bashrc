@@ -270,12 +270,11 @@ alias git-log-filename="git log --name-status"
 alias git-checkout-patch="git checkout --patch"
 
 
-# 変更・追加ファイルを重複なしで列挙する
-# git-log-modify-files [--since=<Date>] [--author=<Author>]
-function git-log-modify-files(){
+# 変更・追加・削除ファイルを重複なしで列挙する
+# git-log-change-files [--since=<Date>] [--author=<Author>]
+function git-log-change-files(){
     options="$@"
-    echo $options
-    git log --name-status $options | grep -e "^[AM]\b" | cut -f 2 | sort | uniq
+    git log --name-status $options | grep -e "^[AMD]\b" | cut -f 2 | sort | uniq
 }
 
 
