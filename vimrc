@@ -336,3 +336,11 @@ endfunction
 
 
 
+" -----------------------------------------------
+" Make
+" -----------------------------------------------
+autocmd filetype php :set makeprg=php\ -ln\ %
+autocmd filetype php :set errorformat=%m\ in\ %f\ on\ line\ %l
+
+
+
