@@ -362,6 +362,17 @@ endfunction
 
 
 "
+" 折り返し表示設定を切り替える
+"
+function! macro#ToggleWrap()
+    if 0 == &l:wrap
+        let &l:wrap = 1
+    else
+        let &l:wrap = 0
+    endif
+endfunction
+
+"
 " タブの展開設定を切り替える
 "
 function! macro#ToggleExpandtab()
