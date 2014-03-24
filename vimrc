@@ -51,10 +51,11 @@ let g:unite_source_menu_menus.shortcat = {
     \ }
 
 let g:unite_source_menu_menus.shortcat.command_candidates = [
-    \ ['Edit     vimrc',      'e $HOME/.vimrc'],
-    \ ['Explorer bookmark',   "VimFilerExplorer $HOME/.cache/unite/bookmark"],
-    \ ['Switch   number',     "call macro#ToggleNumberDisplay()"],
-    \ ['Switch   expandtab',  "call macro#ToggleExpandtab()"],
+    \ ['Edit     vimrc',             'e $HOME/.vimrc'],
+    \ ['Explorer bookmark-files',    "Unite file:$HOME/.cache/unite/bookmark"],
+    \ ['Explorer same-dir-files',    'Unite file:%:h'],
+    \ ['Switch   number',            "call macro#ToggleNumberDisplay()"],
+    \ ['Switch   expandtab',         "call macro#ToggleExpandtab()"],
     \ ['Show     php-function-list', 'vimgrep /\(^\|\s\+\)function\s\+.\+/ % | cwindow'],
     \ ]
 
