@@ -67,13 +67,18 @@ let g:unite_source_file_mru_limit = 500
 let g:unite_source_history_yank_enable = 1
 
 " unite キーバインド
-nnoremap <silent> <S-b> :Unite buffer<CR>
-nnoremap <silent> <S-r> :Unite file_mru<CR>
-nnoremap <silent> <S-c> :Unite bookmark:*<CR>
-nnoremap <silent> <S-u> :UniteBookmarkAdd<CR>
-nnoremap <silent> <S-f> :Unite buffer bookmark:* file_mru directory_mru file<CR>
-nnoremap <silent> <S-m> :Unite menu:shortcat<CR>
-nnoremap <silent> <S-h> :Unite history/yank<CR>
+nnoremap [unite] <Nop>
+nmap f [unite]
+nnoremap <silent> [unite]b :Unite buffer<CR>
+nnoremap <silent> [unite]r :Unite file_mru<CR>
+nnoremap <silent> [unite]c :Unite bookmark:*<CR>
+nnoremap <silent> [unite]u :UniteBookmarkAdd<CR>
+nnoremap <silent> [unite]f :Unite buffer bookmark:* file_mru directory_mru file<CR>
+nnoremap <silent> [unite]m :Unite menu:shortcat<CR>
+nnoremap <silent> [unite]h :Unite history/yank<CR>
+
+
+
 
 " -------------------------------------------------------------------
 " NeoComplcache
@@ -135,6 +140,9 @@ set hlsearch
 
 "検索をファイルの先頭へループする
 set wrapscan
+
+" 入力中のコマンドを表示する
+set showcmd
 
 " 全角スペースに色をつける。
 highlight ZenkakuSpace  guibg=gray ctermbg=gray
