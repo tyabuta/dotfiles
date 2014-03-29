@@ -98,14 +98,13 @@ inoremap <expr><TAB>   pumvisible() ? "<CR>" : "\<TAB>"
 " -------------------------------------------------------------------
 
 let g:vimfiler_as_default_explorer = 1
-
-
-nnoremap <silent> <S-e> :VimFilerExplorer<CR>
-
+nnoremap <silent> [prefix]e :VimFilerExplorer<CR>
 
 " -------------------------------------------------------------------
 " EasyMotion
+" <Leader> はBackSlashキー
 " -------------------------------------------------------------------
+
 map ' <Leader><Leader>s
 
 
