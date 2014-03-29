@@ -68,7 +68,7 @@ let g:unite_source_history_yank_enable = 1
 
 " unite キーバインド
 nnoremap [unite] <Nop>
-nmap f [unite]
+nmap <space> [unite]
 nnoremap <silent> [unite]b :Unite buffer<CR>
 nnoremap <silent> [unite]r :Unite file_mru<CR>
 nnoremap <silent> [unite]c :Unite bookmark:*<CR>
