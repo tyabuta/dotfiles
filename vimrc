@@ -112,6 +112,9 @@ let g:EasyMotion_use_migemo = 1
 nmap ' <Plug>(easymotion-s)
 vmap ' <Plug>(easymotion-s)
 omap ' <Plug>(easymotion-s)
+nmap " <Plug>(easymotion-sol-bd-jk)
+vmap " <Plug>(easymotion-sol-bd-jk)
+omap " <Plug>(easymotion-sol-bd-jk)
 
 " -----------------------------------------------
 " 文字コードの設定
