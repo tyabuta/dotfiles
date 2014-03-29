@@ -34,6 +34,7 @@ NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'tpope/vim-surround'
 
 " ----- End of Bundle管理 -----
 " ------------------
