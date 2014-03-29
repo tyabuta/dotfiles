@@ -44,6 +44,7 @@ NeoBundleCheck
 nnoremap [prefix] <Nop>
 nmap <space> [prefix]
 
+
 " -------------------------------------------------------------------
 " Unite
 " -------------------------------------------------------------------
@@ -105,8 +106,12 @@ nnoremap <silent> [prefix]e :VimFilerExplorer<CR>
 " <Leader> はBackSlashキー
 " -------------------------------------------------------------------
 
-map ' <Leader><Leader>s
+let g:EasyMotion_use_migemo = 1
 
+" key-mapping
+nmap ' <Plug>(easymotion-s)
+vmap ' <Plug>(easymotion-s)
+omap ' <Plug>(easymotion-s)
 
 " -----------------------------------------------
 " 文字コードの設定
