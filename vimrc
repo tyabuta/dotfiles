@@ -33,12 +33,16 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/vimfiler.vim'
+NeoBundle 'Lokaltog/vim-easymotion'
 
 " ----- End of Bundle管理 -----
 " ------------------
 filetype plugin indent on
 NeoBundleCheck
 
+" prefix-key for Keymapping
+nnoremap [prefix] <Nop>
+nmap <space> [prefix]
 
 " -------------------------------------------------------------------
 " Unite
@@ -67,15 +71,13 @@ let g:unite_source_file_mru_limit = 500
 let g:unite_source_history_yank_enable = 1
 
 " unite キーバインド
-nnoremap [unite] <Nop>
-nmap <space> [unite]
-nnoremap <silent> [unite]b :Unite buffer<CR>
-nnoremap <silent> [unite]r :Unite file_mru<CR>
-nnoremap <silent> [unite]c :Unite bookmark:*<CR>
-nnoremap <silent> [unite]u :UniteBookmarkAdd<CR>
-nnoremap <silent> [unite]f :Unite buffer bookmark:* file_mru directory_mru file<CR>
-nnoremap <silent> [unite]m :Unite menu:shortcat<CR>
-nnoremap <silent> [unite]h :Unite history/yank<CR>
+nnoremap <silent> [prefix]b :Unite buffer<CR>
+nnoremap <silent> [prefix]r :Unite file_mru<CR>
+nnoremap <silent> [prefix]c :Unite bookmark:*<CR>
+nnoremap <silent> [prefix]u :UniteBookmarkAdd<CR>
+nnoremap <silent> [prefix]f :Unite buffer bookmark:* file_mru directory_mru file<CR>
+nnoremap <silent> [prefix]m :Unite menu:shortcat<CR>
+nnoremap <silent> [prefix]h :Unite history/yank<CR>
 
 
 
@@ -99,6 +101,12 @@ let g:vimfiler_as_default_explorer = 1
 
 
 nnoremap <silent> <S-e> :VimFilerExplorer<CR>
+
+
+" -------------------------------------------------------------------
+" EasyMotion
+" -------------------------------------------------------------------
+map ' <Leader><Leader>s
 
 
 " -----------------------------------------------
