@@ -149,9 +149,13 @@ nmap " <Plug>(easymotion-sol-bd-jk)
 vmap " <Plug>(easymotion-sol-bd-jk)
 omap " <Plug>(easymotion-sol-bd-jk)
 
-nmap <space><space> <Plug>(easymotion-bd-w)
-vmap <space><space> <Plug>(easymotion-bd-w)
-omap <space><space> <Plug>(easymotion-bd-w)
+nmap [prefix]w <Plug>(easymotion-bd-w)
+vmap [prefix]w <Plug>(easymotion-bd-w)
+omap [prefix]w <Plug>(easymotion-bd-w)
+
+nmap [prefix]e <Plug>(easymotion-bd-e)
+vmap [prefix]e <Plug>(easymotion-bd-e)
+omap [prefix]e <Plug>(easymotion-bd-e)
 
 " -----------------------------------------------
 " 文字コードの設定
