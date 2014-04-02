@@ -149,6 +149,10 @@ nmap " <Plug>(easymotion-sol-bd-jk)
 vmap " <Plug>(easymotion-sol-bd-jk)
 omap " <Plug>(easymotion-sol-bd-jk)
 
+nmap <space><space> <Plug>(easymotion-bd-w)
+vmap <space><space> <Plug>(easymotion-bd-w)
+omap <space><space> <Plug>(easymotion-bd-w)
+
 " -----------------------------------------------
 " 文字コードの設定
 " -----------------------------------------------
@@ -325,6 +329,7 @@ nnoremap <silent> <C-c><S-l>
 "nnoremap <silent> <S-b> :call macro#BufferControl()<CR>
 
 
+nnoremap [prefix]a ggVG
 
 " -----------------------------------------------
 " オートコマンド
