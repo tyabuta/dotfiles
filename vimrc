@@ -145,9 +145,6 @@ let g:EasyMotion_use_migemo = 1
 nmap ' <Plug>(easymotion-s)
 vmap ' <Plug>(easymotion-s)
 omap ' <Plug>(easymotion-s)
-nmap " <Plug>(easymotion-sol-bd-jk)
-vmap " <Plug>(easymotion-sol-bd-jk)
-omap " <Plug>(easymotion-sol-bd-jk)
 
 nmap [prefix]w <Plug>(easymotion-bd-w)
 vmap [prefix]w <Plug>(easymotion-bd-w)
@@ -334,6 +331,11 @@ nnoremap <silent> <C-c><S-l>
 
 
 nnoremap [prefix]a ggVG
+
+
+" カーソル行のコマンドを外部コマンド実行する。
+nnoremap <silent> [prefix]q ^y$:!<C-r>"<CR>
+nnoremap <silent> [prefix]Q ^y$:r!<C-r>"<CR>
 
 " -----------------------------------------------
 " オートコマンド
