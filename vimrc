@@ -368,7 +368,11 @@ command! Run :!./%
 " FileEncodeをUTF-8に設定する。
 command! UTF8 set fenc=utf8
 
+"現バッファの差分表示。
+command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 
+"ファイルまたはバッファ番号を指定して差分表示。#なら裏バッファと比較
+command! -nargs=? -complete=file Diff if '<args>'=='' | browse vertical diffsplit|else| vertical diffsplit <args>|endif
 
 
 
