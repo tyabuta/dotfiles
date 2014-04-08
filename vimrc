@@ -59,7 +59,7 @@ let g:unite_source_menu_menus.shortcat = {
     \ }
 
 let g:unite_source_menu_menus.shortcat.command_candidates = [
-    \ ['Edit     vimrc',             'e $HOME/.vimrc'],
+    \ ['Edit     vimrc (F9)',        'e $HOME/.vimrc'],
     \ ['Explorer bookmark-files',    "Unite file:$HOME/.cache/unite/bookmark"],
     \ ['Explorer same-dir-files',    'Unite file:%:h'],
     \ ['Show     php-function-list', 'vimgrep /\(^\|\s\+\)function\s\+.\+/ % | cwindow'],
@@ -327,7 +327,7 @@ nnoremap <silent> <C-c><S-l>
 "nnoremap <silent> <S-m> :call CommandMenu#Show()<CR>
 
 " Shift-bでバッファ操作
-"nnoremap <silent> <S-b> :call macro#BufferControl()<CR>
+nnoremap <silent> <S-b> :call macro#BufferControl()<CR>
 
 
 nnoremap [prefix]a ggVG
