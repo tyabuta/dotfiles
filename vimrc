@@ -308,6 +308,8 @@ nnoremap <C-d> kyyp
 " 0レジスタを貼付ける。(0レジスタにはヤンクされたものだけが入る。)
 nnoremap <C-p> "0p
 
+" 数字の加算
+nnoremap <C-z> <C-a>
 
 
 " 日付の挿入
