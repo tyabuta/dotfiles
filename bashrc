@@ -91,6 +91,21 @@ function file-find(){
   find ./ -iname "$keyword"
 }
 
+
+# カレントディレクトリ以下のファイル全てを対象に権限変更
+# chmod-files <Permission>
+function chmod-files(){
+  local permission=$1
+  find ./ -type f -print | xargs chmod --verbose $permission
+}
+
+# カレントディレクトリ以下のディレクトリ全てを対象に権限変更
+# chmod-dirs <Permission>
+function chmod-dirs(){
+  local permission=$1
+  find ./ -type d -print | xargs chmod --verbose $permission
+}
+
 #
 # プロセス表示関数
 #
