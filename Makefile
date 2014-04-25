@@ -3,7 +3,8 @@
 
 usage:
 	@echo "make [all-link | link-<File> | unlink-<File> | backup-<File> | install-<File>]"
-	@echo "make [git-config]"
+	@echo "make [git-config | git-stash-pull]"
+
 
 # -----------------------------------------------
 # link
