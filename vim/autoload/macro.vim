@@ -208,15 +208,6 @@ function! macro#PHPSyntaxCheck()
 endfunction
 
 "
-" Bash用のシンタックスチェック
-"
-function! macro#BashSyntaxCheck()
-    execute ":silent !clear"
-    execute ":silent !echo Bash Syntax Check"
-    execute ":!bash -n %"
-endfunction
-
-"
 " Ruby用のシンタックスチェック
 "
 function! macro#RubySyntaxCheck()
@@ -233,8 +224,6 @@ function! macro#Build()
     let filetype = macro#FileType()
     if      "php" == filetype
         call macro#PHPSyntaxCheck()
-    elseif   "sh" == filetype
-        call macro#BashSyntaxCheck()
     elseif "ruby" == filetype
         call macro#RubySyntaxCheck()
     else

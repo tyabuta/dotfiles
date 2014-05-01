@@ -418,6 +418,7 @@ endfunction
 " Make
 " -----------------------------------------------
 autocmd filetype php :set makeprg=php\ -ln\ %
+autocmd filetype sh  :set makeprg=sh\ -n\ %
 autocmd filetype php :set errorformat=%m\ in\ %f\ on\ line\ %l
 
 
