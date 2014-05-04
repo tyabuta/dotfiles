@@ -59,13 +59,16 @@ let g:unite_source_menu_menus.shortcat = {
     \ }
 
 let g:unite_source_menu_menus.shortcat.command_candidates = [
-    \ ['Edit     vimrc (F9)',        'e $HOME/.vimrc'],
-    \ ['Explorer bookmark-files',    "Unite file:$HOME/.cache/unite/bookmark"],
-    \ ['Explorer same-dir-files',    'Unite file:%:h'],
-    \ ['Show     php-function-list', 'vimgrep /\(^\|\s\+\)function\s\+.\+/ % | cwindow'],
-    \ ['Switch   number',            "call macro#ToggleNumberDisplay()"],
-    \ ['Switch   wrap',              "call macro#ToggleWrap()"],
-    \ ['Switch   expandtab',         "call macro#ToggleExpandtab()"],
+    \ ['vimrc-edit   (F9)', 'e $HOME/.vimrc'],
+    \ ['vimrc-reload (F8)', 'source $HOME/.vimrc'],
+    \ ['unite-file-mru',              'Unite file_mru'],
+    \ ['unite-history-yank',          'Unite history/yank'],
+    \ ['unite-same-dir-files',        'Unite file:%:h'],
+    \ ['unite-bookmark-config-files', "Unite file:$HOME/.cache/unite/bookmark"],
+    \ ['switch-number',     "call macro#ToggleNumberDisplay()"],
+    \ ['switch-wrap',       "call macro#ToggleWrap()"],
+    \ ['switch-expandtab',  "call macro#ToggleExpandtab()"],
+    \ ['php-function-list', 'vimgrep /\(^\|\s\+\)function\s\+.\+/ % | cwindow'],
     \ ]
 
 " unite-mru
@@ -76,12 +79,10 @@ let g:unite_source_history_yank_enable = 1
 
 " unite キーバインド
 nnoremap <silent> [prefix]b :Unite buffer<CR>
-nnoremap <silent> [prefix]r :Unite file_mru<CR>
 nnoremap <silent> [prefix]c :Unite bookmark:*<CR>
 nnoremap <silent> [prefix]u :UniteBookmarkAdd<CR>
 nnoremap <silent> [prefix]f :Unite buffer bookmark:* file_mru directory_mru file<CR>
 nnoremap <silent> [prefix]m :Unite menu:shortcat<CR>
-nnoremap <silent> [prefix]h :Unite history/yank<CR>
 
 
 
