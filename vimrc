@@ -288,6 +288,9 @@ set visualbell
 nnoremap <S-j> <C-f>
 nnoremap <S-k> <C-b>
 
+" Ctrl-s で保存
+nnoremap <silent> <C-s> :w<CR>
+
 " タブで画面移動
 nnoremap <Tab> <C-w>p
 
