@@ -172,54 +172,6 @@ path-insert(){
     fi
 }
 
-# symfonyのルーティング検索をおこなう
-# sf-routing-search <Keyword>
-function sf-routing-search(){
-    if [ -z "$1" ]; then
-        echo "usage: sf-routing-search <Keyword>"
-        return
-    fi
-
-    local keyword=$1
-    find ./ -iname "routing.yml" | xargs grep -5 "$keyword"
-}
-
-# symfonyのスキーマ検索をおこなう
-# sf-schema-search <Keyword>
-function sf-schema-search(){
-    if [ -z "$1" ]; then
-        echo "usage: sf-schema-search <Keyword>"
-        return
-    fi
-
-    local keyword=$1
-    find ./ -iname "*schema.yml" | xargs grep -n "$keyword"
-}
-
-# symfonyのテンプレートファイルの検索をおこなう
-# sf-template-search <Action>
-function sf-template-search(){
-    if [ -z "$1" ]; then
-        echo "usage: sf-template-search <Keyword>"
-        return
-    fi
-
-    local actionName=$1
-    find ./ -iname "${actionName}Success.php"
-}
-
-# symfonyのアクションメソッドの検索をおこなう
-# sf-action-search <Action>
-function sf-action-search(){
-    if [ -z "$1" ]; then
-        echo "usage: sf-action-search <Keyword>"
-        return
-    fi
-
-    local actionName=$1
-    find ./ -iname "actions.class.php" | xargs grep -n "execute${actionName}"
-}
-
 # -----------------------------------------------
 # alias設定
 # -----------------------------------------------
