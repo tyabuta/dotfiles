@@ -84,14 +84,6 @@ function php-file-grep(){
   find ./ -iname "*.php" | xargs grep -n "$keyword"
 }
 
-# ファイル名検索をおこなう
-# file-find <Keyword>
-function file-find(){
-  local keyword=$1
-  find ./ -iname "$keyword"
-}
-
-
 # カレントディレクトリ以下のファイル全てを対象に権限変更
 # chmod-files <Permission>
 function chmod-files(){
