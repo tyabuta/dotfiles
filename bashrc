@@ -162,7 +162,7 @@ alias cls="clear"
 if [[ "$(uname)" =~ "CYGWIN" ]]; then
     alias ls="ls -h --color=tty"
 fi
-alias la="ls -la"
+alias la="ls -lha"
 alias rmf="rm -Rf"
 alias vimsudo="sudo -H vim"
 alias desktop="cd ~/Desktop"
