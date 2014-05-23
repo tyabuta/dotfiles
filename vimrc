@@ -46,6 +46,7 @@ NeoBundleCheck
 " prefix-key for Keymapping
 nnoremap [prefix] <Nop>
 nmap <space> [prefix]
+vmap <space> [prefix]
 
 
 " -------------------------------------------------------------------
@@ -335,12 +336,15 @@ nnoremap <silent> <C-c><S-l>
 " Shift-bでバッファ操作
 nnoremap <silent> <S-b> :call macro#BufferControl()<CR>
 
-
+" 全体選択
 nnoremap [prefix]a ggVG
 
 " カレントディレクトリのnote.txtを開く
 nnoremap [prefix]n :e ./note.txt<CR>
 
+" 置換コマンドの補完
+nnoremap [prefix]r :%s///gc<Left><Left><Left>
+vnoremap [prefix]r :s///gc<Left><Left><Left>
 
 " カーソル行のコマンドを外部コマンド実行する。
 nnoremap <silent> [prefix]q ^y$:!<C-r>"<CR>
