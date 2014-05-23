@@ -338,6 +338,9 @@ nnoremap <silent> <S-b> :call macro#BufferControl()<CR>
 
 nnoremap [prefix]a ggVG
 
+" カレントディレクトリのnote.txtを開く
+nnoremap [prefix]n :e ./note.txt<CR>
+
 
 " カーソル行のコマンドを外部コマンド実行する。
 nnoremap <silent> [prefix]q ^y$:!<C-r>"<CR>
