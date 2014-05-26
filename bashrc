@@ -183,6 +183,8 @@ alias wgetall="wget --recursive --no-clobber --page-requisites --html-extension 
 
 #export GIT_SSL_NO_VERIFY=true
 
+alias git-status="git status"
+
 # ステージングしたワークツリーとのdiffを表示する。
 alias git-diff-cached="git diff --cached"
 
