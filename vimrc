@@ -144,17 +144,17 @@ nnoremap <silent> [prefix]e :VimFilerExplorer<CR>
 let g:EasyMotion_use_migemo = 1
 
 " key-mapping
-nmap ' <Plug>(easymotion-s)
-vmap ' <Plug>(easymotion-s)
-omap ' <Plug>(easymotion-s)
+"nmap ' <Plug>(easymotion-s)
+"vmap ' <Plug>(easymotion-s)
+"omap ' <Plug>(easymotion-s)
 
 nmap [prefix]w <Plug>(easymotion-bd-w)
 vmap [prefix]w <Plug>(easymotion-bd-w)
 omap [prefix]w <Plug>(easymotion-bd-w)
 
-nmap [prefix]e <Plug>(easymotion-bd-e)
-vmap [prefix]e <Plug>(easymotion-bd-e)
-omap [prefix]e <Plug>(easymotion-bd-e)
+"nmap [prefix]e <Plug>(easymotion-bd-e)
+"vmap [prefix]e <Plug>(easymotion-bd-e)
+"omap [prefix]e <Plug>(easymotion-bd-e)
 
 " -----------------------------------------------
 " 文字コードの設定
@@ -203,6 +203,11 @@ set showcmd
 highlight ZenkakuSpace  guibg=gray ctermbg=gray
 match ZenkakuSpace /　/
 
+" カーソル形状
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
 
 " ステータスライン
 set laststatus =2
