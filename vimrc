@@ -366,9 +366,6 @@ augroup MyAutoCmd
     " グループ内のオートコマンドを一旦消去
     autocmd!
 
-    " メイクファイルの場合、タブの展開をしない。
-    autocmd FileType make set noexpandtab
-
     " バッファ保存時に不要な末日の空白を削除する。
     autocmd BufWrite * call ClearTailSpace()
 
