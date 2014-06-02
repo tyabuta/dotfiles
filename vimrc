@@ -358,6 +358,14 @@ nnoremap <silent> [prefix]Q ^y$:r!<C-r>"<CR>
 " カーソル位置の単語を検索
 nnoremap <silent> [prefix]s /<C-r><C-w><CR>
 
+
+imap { {}<Left>
+imap [ []<Left>
+imap ( ()<Left>
+
+imap <? <?php  ?><Left><Left><Left>
+
+
 " -----------------------------------------------
 " オートコマンド
 " -----------------------------------------------
