@@ -223,4 +223,9 @@ function git-log-change-files(){
 }
 
 
+function setenv(){
+    cd $WORKDIR
+    screen -xR
+}
+
 

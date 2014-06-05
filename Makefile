@@ -4,6 +4,7 @@
 usage:
 	@echo "make [all-link | link-<File> | unlink-<File> | backup-<File> | install-<File>]"
 	@echo "make [git-config | git-stash-pull]"
+	@echo "make [template-mine]"
 
 
 # -----------------------------------------------
@@ -48,4 +49,12 @@ git-stash-pull:
 	git pull
 	git stash pop
 
+# -----------------------------------------------
+# template
+# -----------------------------------------------
+
+template-mine:
+	echo 'echo "import dotfiles/minerc"' >> ./minerc
+	echo 'WORKDIR="$$HOME/Desktop"' >> ./minerc
+	echo 'VIM_TABSIZE=4' >> ./minerc
 

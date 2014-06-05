@@ -5,10 +5,15 @@
 #####################################################################
 echo "import .bash_profile"
 
+if [ -f $HOME/dotfiles/minerc ]; then
+    source $HOME/dotfiles/minerc
+fi
+
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
+
 
 # -----------------------------------------------
 # PATH設定
