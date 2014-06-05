@@ -239,11 +239,11 @@ set autoindent
 
 " タブ幅を設定。
 set tabstop=4
-let &l:tabstop = $VIM_TABSIZE
+let &g:tabstop = $VIM_TABSIZE
 
 " インデント数を設定。
 set shiftwidth=4
-let &l:shiftwidth = $VIM_TABSIZE
+let &g:shiftwidth = $VIM_TABSIZE
 
 " タブを空白に展開する。
 set expandtab
