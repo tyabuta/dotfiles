@@ -55,6 +55,6 @@ git-stash-pull:
 
 template-mine:
 	echo 'echo "import dotfiles/minerc"' >> ./minerc
-	echo 'WORKDIR="$$HOME/Desktop"' >> ./minerc
-	echo 'VIM_TABSIZE=4' >> ./minerc
+	echo 'export WORKDIR="$$HOME/Desktop"' >> ./minerc
+	echo 'export VIM_TABSIZE=4' >> ./minerc
 
