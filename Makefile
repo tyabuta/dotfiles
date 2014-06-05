@@ -3,7 +3,7 @@
 
 usage:
 	@echo "make [all-link | link-<File> | unlink-<File> | backup-<File> | install-<File>]"
-	@echo "make [git-config | git-stash-pull]"
+	@echo "make [git-config | git-spull]"
 	@echo "make [template-mine]"
 
 
@@ -44,7 +44,7 @@ git-config:
 	git config --global color.ui "auto"
 	git config --global core.whitespace cr-at-eol
 
-git-stash-pull:
+git-spull:
 	git stash
 	git pull
 	git stash pop
