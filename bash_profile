@@ -5,13 +5,25 @@
 #####################################################################
 echo "import .bash_profile"
 
+
+# -----------------------------------------------
+# カスタム用環境変数
+# -----------------------------------------------
+
+# defaults
+export WORKDIR="$HOME/Desktop"
+export VIM_TABSIZE=4
+
+# minerc
 if [ -f $HOME/dotfiles/minerc ]; then
     source $HOME/dotfiles/minerc
 fi
 
-# Get the aliases and functions
-if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
+# -----------------------------------------------
+# bashrc
+# -----------------------------------------------
+if [ -f $HOME/.bashrc ]; then
+    source $HOME/.bashrc
 fi
 
 
