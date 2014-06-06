@@ -1,5 +1,12 @@
 
 
+function! macro#getTabSize()
+    if exists("$VIM_TABSIZE")
+        return $VIM_TABSIZE
+    else
+        return 4
+endfunction
+
 
 " -----------------------------------------------
 " テキストファイルの文字列読み込み関数

@@ -237,16 +237,19 @@ set ttyfast
 " 自動的にインデントする。
 set autoindent
 
-" タブ幅を設定。
-set tabstop=4
-let &g:tabstop = $VIM_TABSIZE
-
-" インデント数を設定。
-set shiftwidth=4
-let &g:shiftwidth = $VIM_TABSIZE
-
 " タブを空白に展開する。
 set expandtab
+
+
+" タブ幅を設定。
+let &g:tabstop = macro#getTabSize()
+let &l:tabstop = macro#getTabSize()
+let &g:softtabstop = macro#getTabSize()
+let &l:softtabstop = macro#getTabSize()
+
+" インデント数を設定。
+let &g:shiftwidth = macro#getTabSize()
+let &l:shiftwidth = macro#getTabSize()
 
 
 
