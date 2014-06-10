@@ -222,6 +222,11 @@ function git-log-change-files(){
     git log --name-status $options | grep -e "^[AMD]\b" | cut -f 2 | sort | uniq
 }
 
+function git-spull(){
+    git stash
+    git pull
+    git stash pop
+}
 
 function setenv(){
     cd $WORKDIR
