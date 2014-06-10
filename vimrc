@@ -112,7 +112,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " -------------------------------------------------------------------
 
 " Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
@@ -363,7 +363,12 @@ nnoremap <silent> [prefix]Q ^y$:r!<C-r>"<CR>
 " カーソル位置の単語を検索
 " nnoremap <silent> [prefix]s /<C-r><C-w><CR>
 
-imap <C-j> <Esc>
+inoremap <C-f> <Esc>
+
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
 
 " imap { {}<Left>
 " imap [ []<Left>
