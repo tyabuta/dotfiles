@@ -53,4 +53,7 @@ template-mine:
 	echo 'echo "import dotfiles/minerc"' >> ./minerc
 	echo 'export WORKDIR="$$HOME/Desktop"' >> ./minerc
 	echo 'export VIM_TABSIZE=4' >> ./minerc
+	echo '#export GIT_SSL_NO_VERIFY=true' >> ./minerc
+
+
 
