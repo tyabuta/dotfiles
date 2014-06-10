@@ -299,6 +299,11 @@ set visualbell
 nnoremap <S-j> <C-f>
 nnoremap <S-k> <C-b>
 
+" Shiftを押しながら移動キーで、行頭、行末移動。
+nnoremap <S-h> ^
+nnoremap <S-l> $
+
+
 " Ctrl-s で保存
 nnoremap <silent> <C-s> :w<CR>
 
