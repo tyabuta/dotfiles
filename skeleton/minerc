@@ -1,0 +1,12 @@
+echo "import dotfiles/minerc"
+
+# setenv関数で移動するディレクトリ
+export WORKDIR="$HOME/Desktop"
+
+# vimで使用するタブ幅
+export VIM_TABSIZE=4
+
+# gitでHTTPSが利用できないときにコメントアウトを外す
+#export GIT_SSL_NO_VERIFY=true
+
+
