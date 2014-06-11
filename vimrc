@@ -308,7 +308,7 @@ nnoremap <S-l> $
 nnoremap <silent> <C-s> :w<CR>
 
 " タブで画面移動
-nnoremap <Tab> <C-w>p
+"nnoremap <Tab> <C-w>p
 
 " vim スクリプトの読み込み(カレントバッファ)
 nnoremap <F5> :call macro#Run()<CR>
