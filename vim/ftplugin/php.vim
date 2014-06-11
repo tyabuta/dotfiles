@@ -1,3 +1,3 @@
 
-inoremap <buffer> <? <?php  ?><Left><Left><Left>
+"inoremap <buffer> <? <?php  ?><Left><Left><Left>
 
