@@ -92,6 +92,7 @@ nnoremap <silent> [prefix]m :Unite -start-insert menu:shortcat<CR>
 " -------------------------------------------------------------------
 " memolist
 " -------------------------------------------------------------------
+let g:memolist_memo_suffix = "txt"
 let g:memolist_unite = 1
 let g:memolist_unite_source = 'file_rec'
 let g:memolist_unite_option = "-auto-preview -start-insert"
