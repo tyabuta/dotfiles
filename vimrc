@@ -37,6 +37,8 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'glidenote/memolist.vim'
+
 
 " ----- End of Bundle管理 -----
 " ------------------
@@ -87,6 +89,14 @@ nnoremap <silent> [prefix]m :Unite -start-insert menu:shortcat<CR>
 
 
 
+" -------------------------------------------------------------------
+" memolist
+" -------------------------------------------------------------------
+let g:memolist_unite = 1
+let g:memolist_unite_source = 'file_rec'
+let g:memolist_unite_option = "-auto-preview -start-insert"
+
+nnoremap <silent> [prefix]l :MemoList<CR>
 
 " -------------------------------------------------------------------
 " NeoComplcache
