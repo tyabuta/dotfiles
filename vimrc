@@ -86,6 +86,7 @@ nnoremap <silent> [prefix]c :Unite -start-insert bookmark:*<CR>
 nnoremap <silent> [prefix]u :UniteBookmarkAdd<CR>
 nnoremap <silent> [prefix]f :Unite -start-insert buffer bookmark:* file_mru directory_mru file<CR>
 nnoremap <silent> [prefix]m :Unite -start-insert menu:shortcat<CR>
+nnoremap <silent> [prefix]j :Unite -auto-preview jump<CR>
 
 
 
