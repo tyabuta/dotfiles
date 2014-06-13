@@ -92,12 +92,17 @@ nnoremap <silent> [prefix]m :Unite -start-insert menu:shortcat<CR>
 " -------------------------------------------------------------------
 " memolist
 " -------------------------------------------------------------------
+
+let g:memolist_path = "$HOME/memo"
 let g:memolist_memo_suffix = "txt"
 let g:memolist_unite = 1
 let g:memolist_unite_source = 'file_rec'
 let g:memolist_unite_option = "-auto-preview -start-insert"
 
 nnoremap <silent> [prefix]l :MemoList<CR>
+
+" グローバルテキスト
+noremap [prefix]n :call macro#openGlobalMemo()<CR>
 
 " -------------------------------------------------------------------
 " NeoComplcache
@@ -365,8 +370,6 @@ nnoremap <silent> <S-b> :call macro#BufferControl()<CR>
 " 全体選択
 nnoremap [prefix]a ggVG
 
-" カレントディレクトリのnote.txtを開く
-nnoremap [prefix]n :e ./note.txt<CR>
 
 " 置換コマンドの補完
 nnoremap [prefix]r :%s///gc<Left><Left><Left>

@@ -7,6 +7,13 @@ function! macro#getTabSize()
         return 4
 endfunction
 
+function! macro#openGlobalMemo()
+    let g:memolist_path = expand(g:memolist_path, ':p')
+    if !isdirectory(g:memolist_path)
+      call mkdir(g:memolist_path, 'p')
+    endif
+    execute ":e " . g:memolist_path . "/global.txt"
+endfunction
 
 " -----------------------------------------------
 " テキストファイルの文字列読み込み関数
