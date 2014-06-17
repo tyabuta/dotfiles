@@ -68,6 +68,7 @@ let g:unite_source_menu_menus.shortcat.command_candidates = [
     \ ['unite-history-yank',          'Unite history/yank'],
     \ ['unite-same-dir-files',        'Unite file:%:h'],
     \ ['unite-bookmark-config-files', "Unite file:$HOME/.cache/unite/bookmark"],
+    \ ['memolist-new',      'MemoNew'],
     \ ['switch-number',     "call macro#ToggleNumberDisplay()"],
     \ ['switch-wrap',       "call macro#ToggleWrap()"],
     \ ['switch-expandtab',  "call macro#ToggleExpandtab()"],
@@ -100,10 +101,10 @@ let g:memolist_unite = 1
 let g:memolist_unite_source = 'file_rec'
 let g:memolist_unite_option = "-auto-preview"
 
-nnoremap <silent> [prefix]l :MemoList<CR>
+nnoremap <silent> [prefix]n :MemoList<CR>
 
 " グローバルテキスト
-noremap [prefix]n :call macro#openGlobalMemo()<CR>
+"noremap [prefix]n :call macro#openGlobalMemo()<CR>
 
 " -------------------------------------------------------------------
 " NeoComplcache
