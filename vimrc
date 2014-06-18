@@ -38,6 +38,7 @@ NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'glidenote/memolist.vim'
+NeoBundle 'tyru/caw.vim'
 
 
 " ----- End of Bundle管理 -----
@@ -173,6 +174,17 @@ omap [prefix]w <Plug>(easymotion-bd-w)
 "nmap [prefix]e <Plug>(easymotion-bd-e)
 "vmap [prefix]e <Plug>(easymotion-bd-e)
 "omap [prefix]e <Plug>(easymotion-bd-e)
+
+
+
+" -------------------------------------------------------------------
+" caw.vim
+" -------------------------------------------------------------------
+
+" コメントアウト
+nmap [prefix]o <Plug>(caw:i:toggle)
+vmap [prefix]o <Plug>(caw:i:toggle)
+
 
 " -----------------------------------------------
 " 文字コードの設定
