@@ -418,8 +418,10 @@ augroup MyAutoCmd
     " バッファ保存時に不要な末日の空白を削除する。
     autocmd BufWrite * call ClearTailSpace()
 
-    " vim終了時にターミナルをクリアする
-    autocmd VimLeave * :!clear
+    if !has('gui_running')
+        " vim終了時にターミナルをクリアする
+        autocmd VimLeave * :!clear
+    endif
 augroup END
 
 
