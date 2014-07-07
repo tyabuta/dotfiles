@@ -39,7 +39,7 @@ NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'tyru/caw.vim'
-
+NeoBundle 'scrooloose/syntastic'
 
 " ----- End of Bundle管理 -----
 " ------------------
@@ -186,6 +186,12 @@ omap [prefix]w <Plug>(easymotion-bd-w)
 nmap [prefix]o <Plug>(caw:i:toggle)
 vmap [prefix]o <Plug>(caw:i:toggle)
 
+
+" -------------------------------------------------------------------
+" syntastic
+" -------------------------------------------------------------------
+let g:syntastic_enable_signs  = 1
+let g:syntastic_auto_loc_list = 2
 
 " -----------------------------------------------
 " 文字コードの設定
