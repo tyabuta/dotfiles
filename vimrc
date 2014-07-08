@@ -95,7 +95,7 @@ nnoremap <silent> [prefix]<S-f> :Unite -start-insert file<CR>
 nnoremap <silent> [prefix]m :Unite -start-insert menu:shortcat<CR>
 nnoremap <silent> [prefix]j :Unite -auto-preview jump<CR>
 nnoremap <silent> [prefix]l :Unite -direction=botright location_list<CR>
-nnoremap <silent> [prefix]d :Unite -vertical -winwidth=40 outline<CR>
+nnoremap <silent> [prefix]d :Unite -direction=botright -vertical -winwidth=70 outline<CR>
 
 
 " -------------------------------------------------------------------
