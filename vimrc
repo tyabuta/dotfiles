@@ -40,6 +40,9 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'tyru/caw.vim'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'osyo-manga/unite-quickfix'
+
+
 
 " ----- End of Bundle管理 -----
 " ------------------
@@ -90,8 +93,7 @@ nnoremap <silent> [prefix]f :Unite -start-insert buffer bookmark:* file_mru dire
 nnoremap <silent> [prefix]<S-f> :Unite -start-insert file<CR>
 nnoremap <silent> [prefix]m :Unite -start-insert menu:shortcat<CR>
 nnoremap <silent> [prefix]j :Unite -auto-preview jump<CR>
-
-
+nnoremap <silent> [prefix]l :Unite -direction=botright location_list<CR>
 
 " -------------------------------------------------------------------
 " memolist
@@ -192,6 +194,7 @@ vmap [prefix]o <Plug>(caw:i:toggle)
 " -------------------------------------------------------------------
 let g:syntastic_enable_signs  = 1
 let g:syntastic_auto_loc_list = 2
+let g:syntastic_always_populate_loc_list = 1
 
 " -----------------------------------------------
 " 文字コードの設定
