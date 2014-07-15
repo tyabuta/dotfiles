@@ -154,6 +154,8 @@ path-insert(){
 # alias設定
 # -----------------------------------------------
 alias cls="clear"
+
+alias ls="ls --color=auto"
 if [[ "$(uname)" =~ "CYGWIN" ]]; then
     alias ls="ls -h --color=tty"
 fi
