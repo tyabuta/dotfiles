@@ -60,6 +60,9 @@ vmap <space> [prefix]
 " Unite
 " -------------------------------------------------------------------
 
+call unite#set_profile('default', 'ignorecase', 1)
+
+
 " unite-menu
 let g:unite_source_menu_menus = {}
 let g:unite_source_menu_menus.shortcat = {
