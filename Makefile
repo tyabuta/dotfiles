@@ -24,10 +24,10 @@ unlink-%: %
 
 BAKDATE = $(shell date +%Y%m%d-%s)
 backup-%: %
-	cp $(HOME)/.$< $(HOME)/.$<.bak$(BAKDATE) 2>&1 | /dev/null
+	cp $(HOME)/.$< $(HOME)/.$<.bak$(BAKDATE) > /dev/null 2>&1
 
 install-%: %
-	cp $(HOME)/.$< $(HOME)/.$<.bak$(BAKDATE) 2>&1 | /dev/null
+	cp $(HOME)/.$< $(HOME)/.$<.bak$(BAKDATE) > /dev/null 2>&1
 	$(LINK) $(CURDIR)/$< $(HOME)/.$<
 
 # -----------------------------------------------
