@@ -11,12 +11,28 @@ if [ -f /etc/bashrc ]; then
 fi
 
 
-#
-# 端末間で、コマンド履歴をリアルタイムに同期する。
-#
-HISTSIZE=10000       # メモリ上の履歴件数
-HISTFILESIZE=10000   # .bash_history に保存する履歴最大件数
+# -----------------------------------------------
+# ヒストリ設定
+# -----------------------------------------------
 
+# 重複コマンドを保存しない。
+#HISTCONTROL=ignoredups
+
+# 空白から始めたコマンドを保存しない。
+#HISTCONTROL=ignorespace
+
+# 空白から始めたコマンドと、重複コマンドを保存しない。
+HISTCONTROL=ignoreboth
+
+
+# メモリ上の履歴件数
+HISTSIZE=10000
+
+# .bash_history に保存する履歴最大件数
+HISTFILESIZE=10000
+
+
+# 端末間で、コマンド履歴をリアルタイムに同期する。
 function share_history {
     history -a  # .bash_historyに前回コマンドを１行追記
     history -c  # 端末ローカルの履歴を一旦消去
@@ -25,16 +41,30 @@ function share_history {
 PROMPT_COMMAND='share_history'  # share_history関数をプロンプト毎に自動実施
 shopt -u histappend             # .bash_history追記モードは不要なのでOFFに
 
-#
-# <Ctrl+S> でbashコマンド履歴を前方検索できるよう、
-# sttyの機能を抑制する。
-#
+
+# <Ctrl+S> でbashコマンド履歴を前方検索できるよう、sttyの機能を抑制する。
 stty stop undef
 
 
-#
+# -----------------------------------------------
+# bash_completion (補完機能強化)
+# -----------------------------------------------
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
+
+# -----------------------------------------------
+# 端末設定
+# -----------------------------------------------
+
+# 端末サイズを自動認識
+shopt -s checkwinsize
+
+
+# -----------------------------------------------
 # X-Window Input Method用の設定
-#
+# -----------------------------------------------
 which ibus-daemon >/dev/null 2>&1
 if [ 0 == $? ] ; then
     export XMODIFIERS=@im=ibus
@@ -42,6 +72,8 @@ if [ 0 == $? ] ; then
     export QT_IM_MODULE=ibus
     ibus-daemon --daemonize --xim
 fi
+
+
 
 # -----------------------------------------------
 # OS環境別設定
