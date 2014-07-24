@@ -41,7 +41,8 @@ NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'tyru/caw.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'osyo-manga/unite-quickfix'
-NeoBundle 'h1mesuke/unite-outline'
+"NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'Shougo/unite-outline'
 
 
 
