@@ -14,6 +14,8 @@ if [[ 'Linux' == "$unamestr" ]]; then
     PLATFORM='linux'
     if [ -f /etc/debian_version ]; then
         PLATFORM='debian'
+    elif [ -f /etc/redhat-release ]; then
+        PLATFORM='centos'
     fi
 elif [[ 'FreeBSD' == "$unamestr" ]]; then
     PLATFORM='freebsd'
