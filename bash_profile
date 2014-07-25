@@ -5,6 +5,25 @@
 #####################################################################
 echo "import .bash_profile"
 
+# -----------------------------------------------
+# プラットフォーム判定
+# -----------------------------------------------
+PLATFORM='unknown'
+unamestr=`uname`
+if [[ 'Linux' == "$unamestr" ]]; then
+    PLATFORM='linux'
+    if [ -f /etc/debian_version ]; then
+        PLATFORM='debian'
+    fi
+elif [[ 'FreeBSD' == "$unamestr" ]]; then
+    PLATFORM='freebsd'
+elif [[ 'cygwin' == "$OSTYPE" ]]; then
+    PLATFORM='cygwin'
+fi
+
+echo "platform: $PLATFORM"
+export PLATFORM
+
 
 # -----------------------------------------------
 # カスタム用環境変数
