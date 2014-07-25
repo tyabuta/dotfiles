@@ -19,6 +19,7 @@ endif
 "
 " 更新 - :NeoBundleUpdate
 " -------------------------------------------------------------------
+
 " neobundleをランタイムPATHに挿入
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -427,7 +428,6 @@ inoremap <C-l> <Right>
 " -----------------------------------------------
 " オートコマンド
 " -----------------------------------------------
-
 augroup MyAutoCmd
     " グループ内のオートコマンドを一旦消去
     autocmd!
