@@ -86,22 +86,6 @@ fi
 
 
 # -----------------------------------------------
-# OS環境別設定
-# -----------------------------------------------
-UNAME=`uname`
-if [ "Darwin" == "$UNAME" ]; then
-    # Mac用
-    alias ls="ls -G"
-    alias la="ls -a"
-    export CLICOLOR=1
-    export LSCOLORS=CxGxcxdxCxegedabagacad
-
-#elif [ $UNAME = "Linux" ]; then
-    # Linux用
-fi
-
-
-# -----------------------------------------------
 # functions
 # -----------------------------------------------
 
@@ -197,11 +181,6 @@ path-insert(){
 # -----------------------------------------------
 alias cls="clear"
 
-alias ls="ls --color=auto"
-if [[ "$(uname)" =~ "CYGWIN" ]]; then
-    alias ls="ls -h --color=tty"
-fi
-alias la="ls -lha"
 alias rmf="rm -Rf"
 alias vimsudo="sudo -H vim"
 alias desktop="cd ~/Desktop"
@@ -280,4 +259,21 @@ function setenv(){
 
 # Java
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
+
+# -----------------------------------------------
+# ls設定
+# -----------------------------------------------
+alias ls="ls --color=auto"
+alias la="ls -lha"
+UNAME=`uname`
+if [ "Darwin" == "$UNAME" ]; then # Mac用
+    alias ls="ls -G"
+    alias la="ls -a"
+    export CLICOLOR=1
+    export LSCOLORS=CxGxcxdxCxegedabagacad
+
+elif [[ "$UNAME" =~ "CYGWIN" ]]; then
+    alias ls="ls -h --color=tty"
+fi
+
 
