@@ -268,7 +268,6 @@ alias la="ls -lha"
 UNAME=`uname`
 if [ "Darwin" == "$UNAME" ]; then # Mac用
     alias ls="ls -G"
-    alias la="ls -a"
     export CLICOLOR=1
     export LSCOLORS=CxGxcxdxCxegedabagacad
 
