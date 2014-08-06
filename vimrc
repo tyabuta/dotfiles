@@ -86,7 +86,7 @@ let g:unite_source_menu_menus.shortcat.command_candidates = [
     \ ]
 
 " unite-mru
-let g:unite_source_file_mru_limit = 500
+let g:unite_source_file_mru_limit = 1000
 
 " unite-history/yank
 let g:unite_source_history_yank_enable = 1
@@ -256,6 +256,10 @@ let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
+
+" Insertモード時に水平ラインを表示する
+set nocursorline
+autocmd InsertEnter,InsertLeave * set cursorline!
 
 " ステータスライン
 set laststatus =2
