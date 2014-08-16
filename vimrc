@@ -166,6 +166,13 @@ endif
 let g:vimfiler_as_default_explorer = 1
 nnoremap <silent> [prefix]e :VimFilerExplorer<CR>
 
+autocmd! FileType vimfiler call s:my_vimfiler_settings()
+function! s:my_vimfiler_settings()
+  nmap     <buffer><expr><Cr> vimfiler#smart_cursor_map("\<Plug>(vimfiler_expand_tree)", "\<Plug>(vimfiler_edit_file)")
+endfunction
+
+
+
 " -------------------------------------------------------------------
 " EasyMotion
 " <Leader> はBackSlashキー
@@ -193,9 +200,8 @@ omap [prefix]w <Plug>(easymotion-bd-w)
 " -------------------------------------------------------------------
 
 " コメントアウト
-nmap [prefix]o <Plug>(caw:i:toggle)
-vmap [prefix]o <Plug>(caw:i:toggle)
-
+nmap [prefix]/ <Plug>(caw:i:toggle)
+vmap [prefix]/ <Plug>(caw:i:toggle)
 
 " -------------------------------------------------------------------
 " syntastic
