@@ -44,6 +44,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'osyo-manga/unite-quickfix'
 "NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'Shougo/unite-outline'
+NeoBundle 'tyabuta/sweep-trail.vim'
 
 
 
@@ -209,6 +210,12 @@ vmap [prefix]/ <Plug>(caw:i:toggle)
 let g:syntastic_enable_signs  = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_always_populate_loc_list = 1
+
+" -------------------------------------------------------------------
+" sweep-trail
+" -------------------------------------------------------------------
+" let g:sweep_trail_enable = 1
+nmap <Leader>sw <Plug>(sweep-trail)
 
 " -----------------------------------------------
 " 文字コードの設定
@@ -438,12 +445,8 @@ inoremap <C-l> <Right>
 " -----------------------------------------------
 " オートコマンド
 " -----------------------------------------------
-augroup MyAutoCmd
-    " グループ内のオートコマンドを一旦消去
+augroup vimrc-my-group
     autocmd!
-
-    " バッファ保存時に不要な末日の空白を削除する。
-    autocmd BufWrite * call ClearTailSpace()
 
     if !has('gui_running')
         " vim終了時にターミナルをクリアする
@@ -485,26 +488,6 @@ function! SyntaxHighlightToggle()
         syntax enable
     endif
 endfunction
-
-
-
-
-
-"
-" カレントバッファの不要な末尾空白を消去する。
-"
-function! ClearTailSpace()
-    let pos = getpos(".")
-
-    " マッチしない場合にError表示が出るのでトラップする。
-    try
-        %s/\s\+$//
-    catch
-    endtry
-
-    call setpos(".", pos)
-endfunction
-
 
 
 " -----------------------------------------------
