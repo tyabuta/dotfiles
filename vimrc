@@ -45,6 +45,7 @@ NeoBundle 'osyo-manga/unite-quickfix'
 "NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'tyabuta/sweep-trail.vim'
+NeoBundle 'tyabuta/sline-style.vim'
 
 
 
@@ -273,12 +274,6 @@ let &t_te.="\e[0 q"
 " Insertモード時に水平ラインを表示する
 set nocursorline
 autocmd InsertEnter,InsertLeave * set cursorline!
-
-" ステータスライン
-set laststatus =2
-set statusline =%<%f%y\ #%n%m%r%h%w
-set statusline+=%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}
-set statusline+=%=\ (%v,%l)/%L%8P\
 
 
 " macvim用の設定
