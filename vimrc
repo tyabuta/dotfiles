@@ -383,7 +383,10 @@ nnoremap <F8> :source ~/.vimrc<CR>
 nnoremap <F9> :e ~/.vimrc<CR>
 
 " 一行上をコピーして貼り付け
-nnoremap <C-d> kyyp
+"nnoremap <C-d> kyyp
+
+" バッファDelete
+nnoremap <silent> <C-d> :bdelete<CR>
 
 " 0レジスタを貼付ける。(0レジスタにはヤンクされたものだけが入る。)
 nnoremap <C-p> "0p
