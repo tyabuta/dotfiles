@@ -31,22 +31,21 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " -------- Bundle管理 ---------
 
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/unite-outline'
 NeoBundle 'Shougo/neocomplcache.vim'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'tpope/vim-surround'
 NeoBundle 'glidenote/memolist.vim'
-NeoBundle 'tyru/caw.vim'
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'osyo-manga/unite-quickfix'
-"NeoBundle 'h1mesuke/unite-outline'
-NeoBundle 'Shougo/unite-outline'
-NeoBundle 'tyabuta/sweep-trail.vim'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'tpope/vim-surround'
 NeoBundle 'tyabuta/sline-style.vim'
-
+NeoBundle 'tyabuta/sweep-trail.vim'
+NeoBundle 'tyru/caw.vim'
 
 
 " ----- End of Bundle管理 -----
@@ -192,6 +191,9 @@ set visualbell
 " -----------------------------------------------
 " キーバインド
 " -----------------------------------------------
+
+" exモード抑制
+nnoremap Q <Nop>
 
 " Shiftを押しながら移動キーで、画面スクロール。
 nnoremap <S-j> <C-f>
