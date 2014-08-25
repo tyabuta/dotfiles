@@ -5,6 +5,8 @@
 #####################################################################
 echo "import .bash_profile"
 
+export LANG=ja_JP.UTF-8
+
 # -----------------------------------------------
 # プラットフォーム判定
 # -----------------------------------------------
@@ -76,6 +78,17 @@ fi
 
 export PATH
 
+
+# -----------------------------------------------
+# cocos2d-x設定
+# -----------------------------------------------
+COCOS_CONSOLE_ROOT="$HOME/Dropbox/lib/cocos2d-x/tools/cocos2d-console/bin"
+if [ -d "$COCOS_CONSOLE_ROOT" ]; then
+    export COCOS_CONSOLE_ROOT
+    export PATH=$COCOS_CONSOLE_ROOT:$PATH
+else
+    unset COCOS_CONSOLE_ROOT
+fi
 
 
 # -----------------------------------------------
