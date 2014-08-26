@@ -46,6 +46,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tyabuta/sline-style.vim'
 NeoBundle 'tyabuta/sweep-trail.vim'
 NeoBundle 'tyru/caw.vim'
+NeoBundle 'junegunn/vim-easy-align'
 
 
 " ----- End of Bundle管理 -----
