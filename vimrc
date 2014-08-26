@@ -45,6 +45,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tyabuta/sline-style.vim'
 NeoBundle 'tyabuta/sweep-trail.vim'
+NeoBundle 'tyabuta/switch-toggler.vim'
 NeoBundle 'tyru/caw.vim'
 NeoBundle 'junegunn/vim-easy-align'
 

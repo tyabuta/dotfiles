@@ -28,17 +28,14 @@ let g:unite_source_menu_menus.shortcat = {
     \ }
 
 let g:unite_source_menu_menus.shortcat.command_candidates = [
-    \ ['vimrc-edit   (F9)', 'e $HOME/.vimrc'],
-    \ ['vimrc-reload (F8)', 'source $HOME/.vimrc'],
+    \ ['vimrc-edit   (F9)',           'e $HOME/.vimrc'],
+    \ ['vimrc-reload (F8)',           'source $HOME/.vimrc'],
     \ ['unite-file-mru',              'Unite file_mru'],
     \ ['unite-history-yank',          'Unite history/yank'],
     \ ['unite-same-dir-files',        'Unite file:%:h'],
     \ ['unite-bookmark-config-files', "Unite file:$HOME/.cache/unite/bookmark"],
-    \ ['memolist-new',      'MemoNew'],
-    \ ['switch-number',     "call macro#ToggleNumberDisplay()"],
-    \ ['switch-wrap',       "call macro#ToggleWrap()"],
-    \ ['switch-expandtab',  "call macro#ToggleExpandtab()"],
-    \ ['php-function-list', 'vimgrep /\(^\|\s\+\)function\s\+.\+/ % | cwindow'],
+    \ ['memolist-new',                'MemoNew'],
+    \ ['php-function-list',           'vimgrep /\(^\|\s\+\)function\s\+.\+/ % | cwindow'],
     \ ]
 
 " unite-mru
@@ -166,6 +163,13 @@ let g:syntastic_always_populate_loc_list = 1
 vmap <Enter> <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
 nmap <Leader>a <Plug>(EasyAlign)
+
+
+
+" -------------------------------------------------------------------
+" switch-toggler
+" -------------------------------------------------------------------
+nmap [prefix]st <Plug>(switch-toggler-unite)
 
 
 
