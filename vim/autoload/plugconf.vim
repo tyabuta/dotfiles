@@ -49,9 +49,10 @@ let g:unite_source_history_yank_enable = 1
 
 " unite キーバインド
 nnoremap <silent> [prefix]b :Unite buffer<CR>
-nnoremap <silent> [prefix]c :Unite bookmark:*<CR>
-nnoremap <silent> [prefix]u :UniteBookmarkAdd<CR>
-nnoremap <silent> [prefix]f :Unite -start-insert buffer bookmark:* file_mru directory_mru file<CR>
+" nnoremap <silent> [prefix]c :Unite bookmark:*<CR>
+" nnoremap <silent> [prefix]u :UniteBookmarkAdd<CR>
+" nnoremap <silent> [prefix]f :Unite -start-insert buffer bookmark:* file_mru directory_mru file<CR>
+nnoremap <silent> [prefix]f :Unite -start-insert file_mru directory_mru<CR>
 nnoremap <silent> [prefix]<S-f> :Unite -start-insert file<CR>
 nnoremap <silent> [prefix]m :Unite -start-insert menu:shortcat<CR>
 nnoremap <silent> [prefix]j :Unite -auto-preview jump<CR>
