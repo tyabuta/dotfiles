@@ -25,7 +25,7 @@ if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 " bundleディレクトリの登録
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 " -------- Bundle管理 ---------
@@ -49,9 +49,8 @@ NeoBundle 'tyabuta/switch-toggler.vim'
 NeoBundle 'tyru/caw.vim'
 NeoBundle 'junegunn/vim-easy-align'
 
-
 " ----- End of Bundle管理 -----
-" ------------------
+call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
 
