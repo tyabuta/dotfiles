@@ -314,22 +314,6 @@ command! -nargs=? -complete=file Diff if '<args>'=='' | browse vertical diffspli
 
 
 " -----------------------------------------------
-" Functions
-" -----------------------------------------------
-
-"
-" シンタックスハイライトを切り替える。(enable/off)
-"
-function! SyntaxHighlightToggle()
-    if exists("g:syntax_on")
-        syntax off
-    else
-        syntax enable
-    endif
-endfunction
-
-
-" -----------------------------------------------
 " Make
 " -----------------------------------------------
 autocmd filetype php :set makeprg=php\ -ln\ %
