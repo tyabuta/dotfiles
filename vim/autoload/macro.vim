@@ -1,3 +1,8 @@
+if 0 != get(g:,'loaded_macro', 0)
+  finish
+endif
+let g:loaded_macro = 1
+
 
 
 function! macro#getTabSize()
@@ -350,5 +355,17 @@ function! macro#CommentOutputLineWithFileType(ftype, linetype)
         call macro#CommentOutputLineForText(a:linetype)
     endif
 endfunction
+
+
+"
+" tmpディレクトリに一時ファイルを作成する。
+"
+function! macro#make_temp()
+  let suffix = input('suffix: ')
+  execute 'edit ' . tempname() . suffix
+endfunction
+
+
+
 
 

@@ -295,16 +295,6 @@ augroup END
 
 
 " -----------------------------------------------
-" Functions
-" -----------------------------------------------
-command! MakeTemp call MakeTemp()
-function! MakeTemp()
-  let suffix = input('suffix: ')
-  execute 'edit ' . tempname() . suffix
-endfunction
-
-
-" -----------------------------------------------
 " Command
 " -----------------------------------------------
 
