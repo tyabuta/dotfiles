@@ -50,6 +50,12 @@ NeoBundle 'tyabuta/switch-toggler.vim'
 NeoBundle 'tyru/caw.vim'
 NeoBundle 'junegunn/vim-easy-align'
 
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
+
+
+
 " ----- End of Bundle管理 -----
 call neobundle#end()
 filetype plugin indent on
@@ -292,6 +298,9 @@ augroup vimrc-my-group
         " vim終了時にターミナルをクリアする
         autocmd VimLeave * :!clear
     endif
+
+    " .mdをmarkdownファイルと認識させる
+    autocmd BufRead,BufNewFile *.md set filetype=markdown
 augroup END
 
 
