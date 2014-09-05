@@ -26,37 +26,7 @@ if has('vim_starting')
 endif
 " bundleディレクトリの登録
 call neobundle#begin(expand('~/.vim/bundle/'))
-
-NeoBundleFetch 'Shougo/neobundle.vim'
-" -------- Bundle管理 ---------
-
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/unite-outline'
-NeoBundle 'Shougo/neocomplcache.vim'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'kana/vim-smartinput'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'glidenote/memolist.vim'
-NeoBundle 'osyo-manga/unite-quickfix'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tyabuta/sline-style.vim'
-NeoBundle 'tyabuta/sweep-trail.vim'
-NeoBundle 'tyabuta/switch-toggler.vim'
-NeoBundle 'tyru/caw.vim'
-NeoBundle 'junegunn/vim-easy-align'
-
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'kannokanno/previm'
-NeoBundle 'tyru/open-browser.vim'
-
-
-
-" ----- End of Bundle管理 -----
+call pluginclude#rc()
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
