@@ -34,4 +34,9 @@ NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 
+" *検索の拡張
+NeoBundle 'thinca/vim-visualstar'
+
+" %の拡張
+NeoBundle 'tmhedberg/matchit'
 
