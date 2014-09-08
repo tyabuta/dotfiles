@@ -27,12 +27,19 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tyabuta/sline-style.vim'
 NeoBundle 'tyabuta/sweep-trail.vim'
 NeoBundle 'tyabuta/switch-toggler.vim'
+
+" コメントアウト機能
 NeoBundle 'tyru/caw.vim'
+
+" 文書整形
 NeoBundle 'junegunn/vim-easy-align'
 
+" ブラウザ起動
+NeoBundle 'tyru/open-browser.vim'
+
+" markdownプレビュー
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
-NeoBundle 'tyru/open-browser.vim'
 
 " *検索の拡張
 NeoBundle 'thinca/vim-visualstar'
