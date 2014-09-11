@@ -103,7 +103,8 @@ set shortmess+=I
 set lazyredraw
 set ttyfast
 
-
+" マーカーでの折りたたみ
+set foldmethod=marker
 
 " -----------------------------------------------
 " インデント関連
