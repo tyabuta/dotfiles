@@ -209,6 +209,13 @@ alias tmux="! tmux a > /dev/null 2>&1 && tmux > /dev/null 2>&1 "
 
 alias wgetall="wget --recursive --no-clobber --page-requisites --html-extension --convert-links --no-parent"
 
+# cygwin環境を想定したaliaus
+# ipconfigをifconfigのように使用する為、perlワンライナーで文字コード変換する
+if which ipconfig >/dev/null 2>&1 && which perl >/dev/null 2>&1; then
+    alias ifconfig="ipconfig | perl -MEncode -pe 'Encode::from_to(\$_,q{shiftjis},q{utf-8});'"
+fi
+
+
 # -----------------------------------------------
 # Git関係
 # -----------------------------------------------
