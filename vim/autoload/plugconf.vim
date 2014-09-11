@@ -38,6 +38,7 @@ let g:unite_source_menu_menus.shortcat.command_candidates = [
     \ ['unite-bookmark-config-files', "Unite file:$HOME/.cache/unite/bookmark"],
     \ ['memolist-new',                'MemoNew'],
     \ ['php-function-list',           'vimgrep /\(^\|\s\+\)function\s\+.\+/ % | cwindow'],
+    \ ['help easy-align-examples',    'help easy-align-examples'],
     \ ]
 
 " unite-mru
