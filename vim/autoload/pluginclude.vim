@@ -29,6 +29,8 @@ NeoBundle 'tyabuta/inline-syntax.vim'
 NeoBundle 'tyabuta/sweep-trail.vim'
 NeoBundle 'tyabuta/switch-toggler.vim'
 
+NeoBundle 'ctrlpvim/ctrlp.vim'
+
 " コメントアウト機能
 NeoBundle 'tyru/caw.vim'
 
