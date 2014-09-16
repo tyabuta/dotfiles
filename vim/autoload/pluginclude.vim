@@ -25,6 +25,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tyabuta/sline-style.vim'
+NeoBundle 'tyabuta/inline-syntax.vim'
 NeoBundle 'tyabuta/sweep-trail.vim'
 NeoBundle 'tyabuta/switch-toggler.vim'
 
