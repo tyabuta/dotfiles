@@ -28,7 +28,7 @@ NeoBundle 'tyabuta/sline-style.vim'
 NeoBundle 'tyabuta/inline-syntax.vim'
 NeoBundle 'tyabuta/sweep-trail.vim'
 NeoBundle 'tyabuta/switch-toggler.vim'
-
+NeoBundle 'LeafCage/foldCC'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 
 " コメントアウト機能
