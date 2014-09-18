@@ -154,6 +154,9 @@ nmap [prefix]w <Plug>(easymotion-bd-w)
 vmap [prefix]w <Plug>(easymotion-bd-w)
 omap [prefix]w <Plug>(easymotion-bd-w)
 
+nmap [prefix]v v<Plug>(easymotion-bd-w)
+
+
 "}}}
 
 " -------------------------------------------------------------------
