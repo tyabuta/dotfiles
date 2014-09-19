@@ -229,6 +229,10 @@ let g:ctrlp_max_depth = 10
 " vim終了時にキャッシュクリアしない(default:1)
 let g:ctrlp_clear_cache_on_exit = 0
 
+" 検索ウィンドウの設定
+" :help g:ctrlp_match_window
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:50'
+
 
 " カレントディレクトリを基準に検索
 nnoremap <silent> [prefix]cf :CtrlPCurWD<CR>
