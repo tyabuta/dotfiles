@@ -217,7 +217,27 @@ nmap [prefix]o <Plug>(openbrowser-open))
 " -------------------------------------------------------------------
 "{{{
 
-let g:ctrlp_map = '[prefix]p'
+" デフォルトのマッピングを無効化(default:'<C-p>')
+let g:ctrlp_map = '<Nop>'
+
+" 対象ファイル最大数(default:10000)
+let g:ctrlp_max_files  = 100000
+
+" 検索対象の最大階層数(default:40)
+let g:ctrlp_max_depth = 10
+
+" vim終了時にキャッシュクリアしない(default:1)
+let g:ctrlp_clear_cache_on_exit = 0
+
+
+" カレントディレクトリを基準に検索
+nnoremap <silent> [prefix]cf :CtrlPCurWD<CR>
+
+" カレントバッファのルートディレクトリを基準に検索(root:自動認識)
+nnoremap <silent> [prefix]cF :CtrlPRoot<CR>
+
+" 最近使ったファイルから検索
+nnoremap <silent> [prefix]cr :CtrlPMRUFiles<CR>
 
 "}}}
 
