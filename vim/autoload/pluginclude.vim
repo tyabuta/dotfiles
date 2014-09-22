@@ -26,7 +26,6 @@ NeoBundle 'kana/vim-smartinput'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tyabuta/sline-style.vim'
 NeoBundle 'tyabuta/inline-syntax.vim'
@@ -34,6 +33,8 @@ NeoBundle 'tyabuta/sweep-trail.vim'
 NeoBundle 'tyabuta/switch-toggler.vim'
 NeoBundle 'LeafCage/foldCC'
 NeoBundle 'ctrlpvim/ctrlp.vim'
+
+NeoBundleLazy 'thinca/vim-quickrun', {'autoload': {'commands':['QuickRun']}}
 
 " Qiita編集用プラグイン
 NeoBundleLazy 'mattn/qiita-vim', {

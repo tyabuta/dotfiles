@@ -255,7 +255,18 @@ set foldtext=FoldCCtext()
 
 " }}}
 
+" -------------------------------------------------------------------
+" vim-quickrun
+" -------------------------------------------------------------------
+" {{{
+let s:hooks = neobundle#get_hooks("vim-quickrun")
+function! s:hooks.on_source(bundle)
 
+    " デフォルトのキーマップを使用しない
+    let g:quickrun_no_default_key_mappings = 1
+
+endfunction
+" }}}
 
 
 
