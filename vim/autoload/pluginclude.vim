@@ -13,7 +13,10 @@ endfunction
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/unite-outline'
+NeoBundleLazy 'Shougo/unite-outline',      { 'depends': ['Shougo/unite.vim'] }
+NeoBundleLazy 'zhaocai/unite-scriptnames', { 'depends': ['Shougo/unite.vim'] }
+NeoBundleLazy 'osyo-manga/unite-quickfix', { 'depends': ['Shougo/unite.vim'] }
+
 NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/neosnippet'
@@ -22,7 +25,6 @@ NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'glidenote/memolist.vim'
-NeoBundle 'osyo-manga/unite-quickfix'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-surround'

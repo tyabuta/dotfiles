@@ -32,10 +32,11 @@ let g:unite_source_menu_menus.shortcat = {
 let g:unite_source_menu_menus.shortcat.command_candidates = [
     \ ['vimrc-edit   (F9)',           'e $HOME/.vimrc'],
     \ ['vimrc-reload (F8)',           'source $HOME/.vimrc'],
-    \ ['unite-file-mru',              'Unite file_mru'],
+    \ ['unite-scriptnames',           'Unite scriptnames'],
     \ ['unite-history-yank',          'Unite history/yank'],
     \ ['unite-same-dir-files',        'Unite file:%:h'],
     \ ['unite-bookmark-config-files', "Unite file:$HOME/.cache/unite/bookmark"],
+    \ ['unite-file-mru',              'Unite file_mru'],
     \ ['memolist-new',                'MemoNew'],
     \ ['php-function-list',           'vimgrep /\(^\|\s\+\)function\s\+.\+/ % | cwindow'],
     \ ['help easy-align-examples',    'help easy-align-examples'],
