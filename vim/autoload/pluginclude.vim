@@ -1,8 +1,10 @@
-
-if 0 != get(g:, 'loaded_pluginclude', 0)
+if 0 != get(g:, 'loaded_pluginclude', 0) " {{{
   finish
 endif
 let g:loaded_pluginclude = 1
+
+" }}}
+
 
 function! pluginclude#rc()
 endfunction
