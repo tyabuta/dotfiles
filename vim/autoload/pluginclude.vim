@@ -13,62 +13,65 @@ endfunction
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/unite.vim'
-NeoBundleLazy 'Shougo/unite-outline',      { 'depends': ['Shougo/unite.vim'] }
-NeoBundleLazy 'zhaocai/unite-scriptnames', { 'depends': ['Shougo/unite.vim'] }
-NeoBundleLazy 'osyo-manga/unite-quickfix', { 'depends': ['Shougo/unite.vim'] }
-
 NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'kana/vim-smartinput'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'tpope/vim-surround'
+
 NeoBundle 'tyabuta/sline-style.vim'
 NeoBundle 'tyabuta/inline-syntax.vim'
 NeoBundle 'tyabuta/sweep-trail.vim'
 NeoBundle 'tyabuta/switch-toggler.vim'
-NeoBundle 'LeafCage/foldCC'
+
+NeoBundle 'LeafCage/foldCC'         " foldスタイルの変更
+NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'junegunn/vim-easy-align' " 文書整形
+NeoBundle 'kana/vim-smartinput'     " 括弧入力の補完
+NeoBundle 'scrooloose/syntastic'    " 保存時の自動シンタックスチェック
+NeoBundle 'thinca/vim-visualstar'   " *検索の拡張
+NeoBundle 'tmhedberg/matchit'       " %の拡張
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tyru/caw.vim'            " コメントアウト機能
 
-NeoBundleLazy 'thinca/vim-quickrun', {'autoload': {'commands':['QuickRun']}}
+" NeoBundle 'plasticboy/vim-markdown'
 
-" Qiita編集用プラグイン
-NeoBundleLazy 'mattn/qiita-vim', {
-            \ 'depends':  ['mattn/webapi-vim'],
-            \ 'autoload': {'commands':['Qiita','CtrlPQiita']}
+
+" unite-source
+NeoBundleLazy 'Shougo/unite-outline',      { 'depends': ['Shougo/unite.vim'] }
+NeoBundleLazy 'zhaocai/unite-scriptnames', { 'depends': ['Shougo/unite.vim'] }
+NeoBundleLazy 'osyo-manga/unite-quickfix', { 'depends': ['Shougo/unite.vim'] }
+
+" quickrun
+NeoBundleLazy 'thinca/vim-quickrun', {
+            \ 'autoload': {'commands':['QuickRun']}
             \ }
 
-" コメントアウト機能
-NeoBundle 'tyru/caw.vim'
-
-" 文書整形
-NeoBundle 'junegunn/vim-easy-align'
+" memolist
+NeoBundleLazy 'glidenote/memolist.vim', {
+            \ 'autoload':{'commands':['MemoList','MemoNew','MemoGrep']}
+            \ }
 
 " ブラウザ起動
-NeoBundle 'tyru/open-browser.vim'
+NeoBundleLazy 'tyru/open-browser.vim', {
+            \ 'autoload':{'commands':['OpenBrowser'],'mappings':['<Plug>(openbrowser-']}
+            \ }
 
 " markdownプレビュー
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'kannokanno/previm'
-
-" *検索の拡張
-NeoBundle 'thinca/vim-visualstar'
+NeoBundleLazy 'kannokanno/previm', {
+            \ 'depends':  ['tyru/open-browser.vim'],
+            \ 'autoload': {'commands':['PrevimOpen']}
+            \ }
 
 " PrettyPrint
 NeoBundleLazy 'thinca/vim-prettyprint', {
             \ 'autoload':{'commands': ['PrettyPrint', 'PP'], 'functions': ['PrettyPrint', 'PP']}}
 
-
-" %の拡張
-NeoBundle 'tmhedberg/matchit'
-
-" memolist
-NeoBundleLazy 'glidenote/memolist.vim', {'autoload':{'commands':['MemoList','MemoNew','MemoGrep']}}
-
-
-
+" Qiita編集
+NeoBundleLazy 'mattn/qiita-vim', {
+            \ 'depends':  ['mattn/webapi-vim'],
+            \ 'autoload': {'commands':['Qiita','CtrlPQiita']}
+            \ }
 
 

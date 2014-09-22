@@ -66,18 +66,20 @@ nnoremap <silent> [prefix]d :Unite -direction=botright -vertical -winwidth=70 ou
 " memolist
 " -------------------------------------------------------------------
 " {{{
+let s:hooks = neobundle#get_hooks("memolist.vim")
+function! s:hooks.on_source(bundle)
 
+    " メモファイルの置き場所
+    let g:memolist_path        = '~/memo'
 
-let g:memolist_path = "$HOME/memo"
-let g:memolist_memo_suffix = "txt"
-let g:memolist_unite = 1
-" let g:memolist_unite_source = 'file_rec'
-" let g:memolist_unite_option = "-auto-preview"
+    " メモファイルの拡張子
+    let g:memolist_memo_suffix = 'txt'
+
+    " uniteで使用する
+    let g:memolist_unite       = 1
+endfunction
 
 nnoremap <silent> [prefix]n :MemoList<CR>
-
-" グローバルテキスト
-"noremap [prefix]n :call macro#openGlobalMemo()<CR>
 
 " }}}
 
