@@ -24,7 +24,6 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tyabuta/sline-style.vim'
@@ -65,4 +64,11 @@ NeoBundleLazy 'thinca/vim-prettyprint', {
 
 " %の拡張
 NeoBundle 'tmhedberg/matchit'
+
+" memolist
+NeoBundleLazy 'glidenote/memolist.vim', {'autoload':{'commands':['MemoList','MemoNew','MemoGrep']}}
+
+
+
+
 
