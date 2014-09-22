@@ -58,6 +58,11 @@ NeoBundle 'kannokanno/previm'
 " *検索の拡張
 NeoBundle 'thinca/vim-visualstar'
 
+" PrettyPrint
+NeoBundleLazy 'thinca/vim-prettyprint', {
+            \ 'autoload':{'commands': ['PrettyPrint', 'PP'], 'functions': ['PrettyPrint', 'PP']}}
+
+
 " %の拡張
 NeoBundle 'tmhedberg/matchit'
 
