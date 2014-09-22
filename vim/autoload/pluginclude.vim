@@ -33,6 +33,12 @@ NeoBundle 'tyabuta/switch-toggler.vim'
 NeoBundle 'LeafCage/foldCC'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 
+" Qiita編集用プラグイン
+NeoBundleLazy 'mattn/qiita-vim', {
+            \ 'depends':  ['mattn/webapi-vim'],
+            \ 'autoload': {'commands':['Qiita','CtrlPQiita']}
+            \ }
+
 " コメントアウト機能
 NeoBundle 'tyru/caw.vim'
 
