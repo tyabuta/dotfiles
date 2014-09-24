@@ -24,6 +24,38 @@ call unite#set_profile('default', 'ignorecase', 1)
 
 " Unite bookmark でディレクトリをVimFilerExplorerで開く
 let s:action = { 'description' : 'open vimfiler-explorer buffer here' }
+function! s:check_is_directory(directory) " {{{
+  if !isdirectory(a:directory)
+    if unite#util#is_sudo()
+      return 0
+    endif
+
+    let yesno = input(printf(
+          \ 'Directory path "%s" does not exist. Create? : ', a:directory))
+    redraw
+    if yesno !~ '^y\%[es]$'
+      echo 'Canceled.'
+      return 0
+    endif
+
+    call mkdir(a:directory, 'p')
+  endif
+
+  return 1
+endfunction
+"}}}
+function! s:move_vimfiler_cursor(candidate) "{{{
+  if &filetype !=# 'vimfiler'
+    return
+  endif
+
+  if has_key(a:candidate, 'action__path')
+        \ && a:candidate.action__path !=#
+        \     unite#helper#get_candidate_directory(a:candidate)
+    " Move cursor.
+    call vimfiler#mappings#search_cursor(a:candidate.action__path)
+  endif
+endfunction"}}}
 function! s:action.func(candidate) " {{{
   if !exists(':VimFilerExplorer')
     echo 'vimfiler is not installed.'
@@ -31,6 +63,10 @@ function! s:action.func(candidate) " {{{
   endif
 
   let directory = unite#helper#get_candidate_directory(a:candidate)
+  if !s:check_is_directory(directory)
+    return
+  endif
+
   execute 'VimFilerExplorer' escape(directory, '\ ')
 
   if has_key(a:candidate, 'action__path')
