@@ -31,10 +31,6 @@ function! s:action.func(candidate) " {{{
   endif
 
   let directory = unite#helper#get_candidate_directory(a:candidate)
-  if !s:check_is_directory(directory)
-    return
-  endif
-
   execute 'VimFilerExplorer' escape(directory, '\ ')
 
   if has_key(a:candidate, 'action__path')
@@ -43,26 +39,6 @@ function! s:action.func(candidate) " {{{
     call vimfiler#mappings#search_cursor(a:candidate.action__path)
     call s:move_vimfiler_cursor(a:candidate)
   endif
-endfunction " }}}
-function! s:check_is_directory(directory) " {{{
-
-  if !isdirectory(a:directory)
-    if unite#util#is_sudo()
-      return 0
-    endif
-
-    let yesno = input(printf(
-          \ 'Directory path "%s" does not exist. Create? : ', a:directory))
-    redraw
-    if yesno !~ '^y\%[es]$'
-      echo 'Canceled.'
-      return 0
-    endif
-
-    call mkdir(a:directory, 'p')
-  endif
-
-  return 1
 endfunction " }}}
 call unite#custom#action('source/bookmark/directory', 'vimfiler-explorer', s:action)
 call unite#custom_default_action('source/bookmark/directory', 'vimfiler-explorer')
