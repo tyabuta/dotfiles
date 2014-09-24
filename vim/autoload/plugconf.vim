@@ -22,6 +22,52 @@ vmap <space> [prefix]
 
 call unite#set_profile('default', 'ignorecase', 1)
 
+" Unite bookmark でディレクトリをVimFilerExplorerで開く
+let s:action = { 'description' : 'open vimfiler-explorer buffer here' }
+function! s:action.func(candidate) " {{{
+  if !exists(':VimFilerExplorer')
+    echo 'vimfiler is not installed.'
+    return
+  endif
+
+  let directory = unite#helper#get_candidate_directory(a:candidate)
+  if !s:check_is_directory(directory)
+    return
+  endif
+
+  execute 'VimFilerExplorer' escape(directory, '\ ')
+
+  if has_key(a:candidate, 'action__path')
+        \ && directory !=# a:candidate.action__path
+    " Move cursor.
+    call vimfiler#mappings#search_cursor(a:candidate.action__path)
+    call s:move_vimfiler_cursor(a:candidate)
+  endif
+endfunction " }}}
+function! s:check_is_directory(directory) " {{{
+
+  if !isdirectory(a:directory)
+    if unite#util#is_sudo()
+      return 0
+    endif
+
+    let yesno = input(printf(
+          \ 'Directory path "%s" does not exist. Create? : ', a:directory))
+    redraw
+    if yesno !~ '^y\%[es]$'
+      echo 'Canceled.'
+      return 0
+    endif
+
+    call mkdir(a:directory, 'p')
+  endif
+
+  return 1
+endfunction " }}}
+call unite#custom#action('source/bookmark/directory', 'vimfiler-explorer', s:action)
+call unite#custom_default_action('source/bookmark/directory', 'vimfiler-explorer')
+unlet s:action
+
 
 " unite-menu
 let g:unite_source_menu_menus = {}
@@ -50,7 +96,7 @@ let g:unite_source_history_yank_enable = 1
 
 " unite キーバインド
 nnoremap <silent> [prefix]b :Unite buffer<CR>
-" nnoremap <silent> [prefix]c :Unite bookmark:*<CR>
+nnoremap <silent> [prefix]ee :Unite -direction=topleft -vertical -winwidth=35 bookmark<CR>
 " nnoremap <silent> [prefix]u :UniteBookmarkAdd<CR>
 " nnoremap <silent> [prefix]f :Unite -start-insert buffer bookmark:* file_mru directory_mru file<CR>
 nnoremap <silent> [prefix]f :Unite -start-insert file_mru directory_mru<CR>
