@@ -98,6 +98,7 @@ let g:unite_source_menu_menus.shortcat.command_candidates = [
     \ ['memolist-new',                'MemoNew'],
     \ ['php-function-list',           'vimgrep /\(^\|\s\+\)function\s\+.\+/ % | cwindow'],
     \ ['help easy-align-examples',    'help easy-align-examples'],
+    \ ['help vimfiler-default-key-mappings', 'help vimfiler-default-key-mappings'],
     \ ]
 
 " unite-mru
