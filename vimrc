@@ -145,13 +145,15 @@ set mouse=a
 " 保存しなくてもバッファ切り替えが出来る
 set hidden
 
-" スワップファイル設定
-"set noswapfile                 " スワップファイルを作成しない
-set directory=$HOME/.vim/backup " ディレクトリを指定
 
-" バックアップファイル設定
-"set nobackup                   " バックアップを作成しない
-set backupdir=$HOME/.vim/backup " ディレクトリを指定する
+" 書き込み可能なディレクトリなら、
+" スワップファイルを下記ディレクトリに作成する
+let s:backup_dir = expand('~/dotfiles/vim/backup')
+if 2 == filewritable(s:backup_dir)
+  let &g:directory = s:backup_dir " スワップファイルの場所
+  let &g:backupdir = s:backup_dir " バックアップファイルの場所
+endif
+unlet s:backup_dir
 
 
 " TOhtmlコマンドで行番号を出力しない
