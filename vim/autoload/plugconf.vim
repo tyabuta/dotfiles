@@ -20,7 +20,8 @@ vmap <space> [prefix]
 " -------------------------------------------------------------------
 "{{{
 
-call unite#set_profile('default', 'ignorecase', 1)
+" unite検索で大文字小文字を無視する
+call unite#set_profile('default', 'context', {'ignorecase':1})
 
 " Unite bookmark でディレクトリをVimFilerExplorerで開く
 let s:action = { 'description' : 'open vimfiler-explorer buffer here' }
