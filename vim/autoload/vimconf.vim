@@ -152,7 +152,9 @@ set clipboard=unnamed,autoselect
 set autoread
 
 " ビープオンをフラッシュ表示に切り替え
-" set visualbell
+if has('gui_macvim')
+    set visualbell
+endif
 
 " }}}
 
