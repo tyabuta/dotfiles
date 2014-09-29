@@ -236,19 +236,16 @@ vnoremap [prefix]r :s///gc<Left><Left><Left>
 nnoremap <silent> [prefix]q ^y$:!<C-r>"<CR>
 nnoremap <silent> [prefix]Q ^y$:r!<C-r>"<CR>
 
-" カーソル位置の単語を検索
-" nnoremap <silent> [prefix]s /<C-r><C-w><CR>
 
+" Esc
 inoremap <C-f> <Esc>
 
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
+" インサートモードのカーソル移動
+" j,kはメニュー展開時は<C-n>,<C-p>に展開する
+inoremap <expr><C-j> pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr><C-k> pumvisible() ? "\<C-p>" : "\<Up>"
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
-
-" imap { {}<Left>
-" imap [ []<Left>
-" imap ( ()<Left>
 
 " }}}
 

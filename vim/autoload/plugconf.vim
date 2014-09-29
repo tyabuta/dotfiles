@@ -152,7 +152,7 @@ nnoremap <silent> [prefix]n :MemoList<CR>
 let g:neocomplcache_enable_at_startup = 1
 
 " タブで補完を確定する。
-inoremap <expr><TAB>   pumvisible() ? "<CR>" : "\<TAB>"
+inoremap <expr><TAB>   pumvisible() ? "\<CR>" : "\<TAB>"
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -168,18 +168,27 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " -------------------------------------------------------------------
 " {{{
 
-" Plugin key-mappings.
-imap <C-i>     <Plug>(neosnippet_expand)
-smap <C-i>     <Plug>(neosnippet_expand_)
-xmap <C-i>     <Plug>(neosnippet_expand_target)
+" snippetディレクトリの設定
+if isdirectory(expand("~/dotfiles/vim/snippet"))
+    let g:neosnippet#snippets_directory = "~/dotfiles/vim/snippet"
 
-" SuperTab like snippets behavior.
+elseif isdirectory(expand("$VIM/dotfiles/vim/snippet"))
+    let g:neosnippet#snippets_directory = "$VIM/dotfiles/vim/snippet"
+endif
+
+
+
+" TABキー操作
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-            \ "\<Plug>(neosnippet_expand_or_jump)"
-            \: pumvisible() ? "\<C-n>" : "\<TAB>"
+            \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-            \ "\<Plug>(neosnippet_expand_or_jump)"
-            \: "\<TAB>"
+            \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" CRキー操作
+imap <expr><CR> neosnippet#expandable() ?
+            \ "\<Plug>(neosnippet_expand)" : "\<CR>"
+smap <expr><CR> neosnippet#expandable() ?
+            \ "\<Plug>(neosnippet_expand)" : "\<CR>"
 
 " For snippet_complete marker.
 if has('conceal')
