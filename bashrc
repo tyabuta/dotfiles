@@ -213,6 +213,8 @@ alias wgetall="wget --recursive --no-clobber --page-requisites --html-extension 
 # ipconfigをifconfigのように使用する為、perlワンライナーで文字コード変換する
 if which ipconfig >/dev/null 2>&1 && which perl >/dev/null 2>&1; then
     alias ifconfig="ipconfig | perl -MEncode -pe 'Encode::from_to(\$_,q{shiftjis},q{utf-8});'"
+
+    alias ifconfig-renew="ipconfig /renew | perl -MEncode -pe 'Encode::from_to(\$_,q{shiftjis},q{utf-8});'"
 fi
 
 
