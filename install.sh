@@ -51,23 +51,16 @@ function link2(){
 
 # ファイルのバックアップ
 echo "Begin to backup files."
-backup .profile
-backup .tmux.conf
-backup .vimrc
-backup .vim
-backup .emacs.d
-backup .bashrc
 backup .bash_profile
-backup .minttyrc
+backup .bashrc
 backup .screenrc
+backup .minttyrc
 
 
 # リンクを張る
 echo "Beginning to make link files."
-link profile
-link vimrc
-link vim
-link emacs.d
+link bash_profile
+link bashrc
 link screenrc
 
 
@@ -75,11 +68,6 @@ if [[ "$(uname)" =~ "CYGWIN" ]]; then
     link minttyrc
 fi
 
-if [ "Darwin" = "$(uname)" ]; then
-    link2 tmux-osx.conf .tmux.conf
-else
-    link tmux.conf
-fi
 
 # 不要なファイルを削除する。
 # 環境によっては .profile が呼ばれなくなる為、.bashrc .bash_profile を削除。
