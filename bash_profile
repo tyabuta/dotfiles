@@ -91,7 +91,8 @@ export PATH
 # -----------------------------------------------
 # cocos2d-x設定
 # -----------------------------------------------
-COCOS_CONSOLE_ROOT="$HOME/Dropbox/lib/cocos2d-x/tools/cocos2d-console/bin"
+
+COCOS_CONSOLE_ROOT="$HOME/Dropbox/lib/cocos2d-x-3.2/tools/cocos2d-console/bin"
 if [ -d "$COCOS_CONSOLE_ROOT" ]; then
     export COCOS_CONSOLE_ROOT
     export PATH=$COCOS_CONSOLE_ROOT:$PATH
