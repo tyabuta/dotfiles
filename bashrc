@@ -266,7 +266,7 @@ function git-log-change-files(){
 function git-spull(){
     git stash
     git pull
-    git stash pop
+    git stash pop --index
 }
 
 function setenv(){
