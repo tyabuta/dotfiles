@@ -14,7 +14,9 @@
 --regex-js=/([^= ]+)[ \t]*=[ \t]*[^']"[^"]*/\1/s,string/
 --regex-js=/\.prototype\.([A-Za-z0-9._$\(\)]+)[ \t]*[:=][ \t]*function[ \t]*\(/\1/m,method/
 --regex-js=/^(|var[ \t]+)([A-Za-z0-9._$\#]+)[ \t]*[=]/\2/v,global variables/
+--regex-js=/^[ \t]+([A-Z0-9._$\#]+)[ \t]*[:=]/\1/d,define/
 
 
 --regex-php=/^[ \t]*const[ \t]+([a-z0-9_]+)/\1/d/i
+
 
