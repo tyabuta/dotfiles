@@ -65,6 +65,11 @@ fi
 PATH="/usr/local/bin:$PATH"
 PATH="$HOME/local/bin:$PATH"
 
+# node_modules
+if [ -d "$HOME/node_modules/.bin" ]; then
+    PATH="$HOME/node_modules/.bin:$PATH"
+fi
+
 # Heroku
 if [ -d "/usr/local/heroku/bin" ] ; then
     export PATH="/usr/local/heroku/bin:$PATH"
@@ -105,4 +110,11 @@ fi
 # rbenv
 # -----------------------------------------------
 if which rbenv > /dev/null 2>&1; then eval "$(rbenv init -)"; fi
+
+
+
+
+
+
+
 
