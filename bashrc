@@ -3,6 +3,7 @@
 #                            .bashrc
 #                                             (c) 2011-2014 tyabuta.
 #####################################################################
+[ -z "$PS1" ] && return
 echo "import .bashrc"
 
 # Source global definitions
