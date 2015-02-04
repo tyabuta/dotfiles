@@ -21,6 +21,8 @@ if [[ 'Linux' == "$unamestr" ]]; then
     fi
 elif [[ 'FreeBSD' == "$unamestr" ]]; then
     PLATFORM='freebsd'
+elif [[ 'Darwin' == "$unamestr" ]]; then
+    PLATFORM='mac'
 elif [[ 'cygwin' == "$OSTYPE" ]]; then
     PLATFORM='cygwin'
 fi
@@ -36,6 +38,16 @@ if [[ 'cygwin' == "$PLATFORM" ]]; then
     # DOSのファイルPATHを使用したときに警告を出さない
     export CYGWIN="nodosfilewarning"
 fi
+
+
+# -----------------------------------------------
+# mac用の設定
+# -----------------------------------------------
+if [[ 'mac' == "$PLATFORM" ]]; then
+    # macでlessコマンドのオプションを設定する（カラー表示）
+    export LESS=eFRX
+fi
+
 
 
 # -----------------------------------------------
