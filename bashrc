@@ -283,6 +283,7 @@ export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 # ls設定
 # -----------------------------------------------
 alias ls="ls --color=auto"
+alias ll="ls -lh"
 alias la="ls -lha"
 UNAME=`uname`
 if [ "Darwin" == "$UNAME" ]; then # Mac用
