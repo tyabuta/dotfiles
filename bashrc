@@ -206,7 +206,7 @@ alias diff="diff --unified --ignore-space-change"
 
 # tmux のセッションを呼び出す。
 # 起動していない場合はセッション作成を行う。
-alias tmux="! tmux a > /dev/null 2>&1 && tmux > /dev/null 2>&1 "
+#alias tmux="! tmux a > /dev/null 2>&1 && tmux > /dev/null 2>&1 "
 
 alias wgetall="wget --recursive --no-clobber --page-requisites --html-extension --convert-links --no-parent"
 
