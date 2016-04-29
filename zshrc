@@ -46,6 +46,8 @@ fi
 
 # alias
 alias git-status="git status"
+# ステージングしたワークツリーとのdiffを表示する。
+alias git-diff-cached="git diff --cached"
 
 # Keypad
 # 0 . Enter
