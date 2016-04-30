@@ -13,12 +13,11 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/sudo
     zgen oh-my-zsh plugins/command-not-found
     zgen load zsh-users/zsh-syntax-highlighting
-    zgen load /path/to/super-secret-private-plugin
+    zgen load mollifier/anyframe
 
     # bulk load
     zgen loadall <<EOPLUGINS
         zsh-users/zsh-history-substring-search
-        /path/to/local/plugin
 EOPLUGINS
     # ^ can't indent this EOPLUGINS
 
@@ -31,6 +30,10 @@ EOPLUGINS
     # save all to init script
     zgen save
 fi
+
+# cdr
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
 
 
 
@@ -71,4 +74,12 @@ bindkey -s "^[Ok" "+"
 bindkey -s "^[Om" "-"
 bindkey -s "^[Oj" "*"
 bindkey -s "^[Oo" "/"
+
+
+
+# anyframe key-bind
+bindkey '^n^n' anyframe-widget-select-widget
+bindkey '^ncd' anyframe-widget-cdr
+bindkey '^nr'  anyframe-widget-put-history
+
 
