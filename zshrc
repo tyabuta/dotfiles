@@ -76,10 +76,18 @@ bindkey -s "^[Oj" "*"
 bindkey -s "^[Oo" "/"
 
 
+# my anyframe
+function my-anyframe-widget-put-git-branches(){
+    anyframe-source-git-branch -a | perl -pe 's/^remotes\///' | perl -alne 'print $F[0]' | anyframe-selector-auto | anyframe-action-insert
+}
+zle -N -- my-anyframe-widget-put-git-branches
 
 # anyframe key-bind
 bindkey '^n^n' anyframe-widget-select-widget
 bindkey '^ncd' anyframe-widget-cdr
 bindkey '^nr'  anyframe-widget-put-history
+bindkey '^nb'  my-anyframe-widget-put-git-branches
+
+
 
 
