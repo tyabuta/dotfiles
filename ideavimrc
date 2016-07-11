@@ -1,0 +1,28 @@
+
+set showmode
+set surround
+set scrolloff=5 sidescrolloff=10  " keep some lines before and after the cursor visible
+
+" ---------------
+" Sounds
+" ---------------
+set noerrorbells
+set novisualbell
+set t_vb=
+
+
+" ---------------
+" key map
+" ---------------
+nnoremap / :action Find<CR>
+nnoremap n :action FindNext<CR>
+nnoremap N :action FindPrevious<CR>
+
+noremap = :action ReformatCode<CR>
+
+noremap  J 3j
+noremap  K 3k
+noremap  H ^
+noremap  L $
+
+
