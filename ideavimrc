@@ -25,4 +25,13 @@ noremap  K 3k
 noremap  H ^
 noremap  L $
 
+nnoremap m :action MethodDown<CR>
+nnoremap M :action MethodUp<CR>
+nnoremap e :action GotoNextError<CR>
+nnoremap E :action GotoPreviousError<CR>
+
+nnoremap <space>i :action GotoImplementation<CR>
+nnoremap <space>u :action FindUsages<CR>
+
+nnoremap <space>rc :source ~/.ideavimrc<CR>
 
