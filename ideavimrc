@@ -32,6 +32,7 @@ nnoremap E :action GotoPreviousError<CR>
 
 nnoremap <space>i :action GotoImplementation<CR>
 nnoremap <space>u :action FindUsages<CR>
+nnoremap <space>o :action FileStructurePopup<CR>
 
 nnoremap <space>rc :source ~/.ideavimrc<CR>
 
