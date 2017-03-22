@@ -1,4 +1,7 @@
 
+
+export LANG="ja_JP.UTF-8"
+
 # load zgen
 source "${HOME}/.zgen/zgen.zsh"
 
@@ -51,6 +54,10 @@ export SDKMAN_DIR="${HOME}/.sdkman"
 if [ -d "${HOME}/ScriptTools" ] ; then
     PATH="${HOME}/ScriptTools:$PATH"
 fi
+
+
+# スペースで始まるコマンドは履歴に残さない。
+setopt hist_ignore_space
 
 # alias
 alias git-status="git status"
