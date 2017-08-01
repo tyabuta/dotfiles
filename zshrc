@@ -100,6 +100,10 @@ bindkey '^ncd' anyframe-widget-cdr
 bindkey '^nr'  anyframe-widget-put-history
 bindkey '^nb'  my-anyframe-widget-put-git-branches
 
+# my key-bind
+if which wd >/dev/null 2>&1; then
+    bindkey -s '^nw' `wd`
+fi
 
 
 
