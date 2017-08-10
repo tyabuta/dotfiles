@@ -105,5 +105,6 @@ if which wd >/dev/null 2>&1; then
     bindkey -s '^nw' `wd`
 fi
 
+bindkey -s '^nd' `date +'%Y-%m-%d'`
 
 
