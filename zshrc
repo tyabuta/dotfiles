@@ -39,9 +39,9 @@ autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
 zstyle ':chpwd:*' recent-dirs-max 1000
 
-# ~/.go
-if [ -d "${HOME}/.go" ] ; then
-    export GOPATH="${HOME}/.go"
+# ~/go
+if which go >/dev/null 2>&1; then
+    export GOPATH="${HOME}/go"
     PATH="${GOPATH}/bin:$PATH"
 fi
 
