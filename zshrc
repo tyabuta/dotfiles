@@ -107,4 +107,10 @@ fi
 
 bindkey -s '^nd' `date +'%Y-%m-%d'`
 
+gosrc-look (){
+    local selectedDir=$(gosrc list | fzf)
+    gosrc look $selectedDir
+}
+
+
 
