@@ -40,10 +40,10 @@ add-zsh-hook chpwd chpwd_recent_dirs
 zstyle ':chpwd:*' recent-dirs-max 1000
 
 # ~/go
-if which go >/dev/null 2>&1; then
-    export GOPATH="${HOME}/go"
-    PATH="${GOPATH}/bin:$PATH"
-fi
+ if which go >/dev/null 2>&1; then
+     export GOPATH="${HOME}/go"
+     PATH="${GOPATH}/bin:$PATH"
+ fi
 
 # sdkman
 export SDKMAN_DIR="${HOME}/.sdkman"
