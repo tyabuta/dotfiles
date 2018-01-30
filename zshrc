@@ -50,6 +50,10 @@ export SDKMAN_DIR="${HOME}/.sdkman"
 [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
 
 
+# qtdeploy
+# homebrewでqt5をインストールした場合に必要な環境変数
+export QT_HOMEBREW=true
+
 # ~/ScriptTools
 if [ -d "${HOME}/ScriptTools" ] ; then
     PATH="${HOME}/ScriptTools:$PATH"
