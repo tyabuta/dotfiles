@@ -36,3 +36,5 @@ nnoremap <space>o :action FileStructurePopup<CR>
 
 nnoremap <space>rc :source ~/.ideavimrc<CR>
 
+nnoremap <Space>, f,a<CR><ESC>
+
